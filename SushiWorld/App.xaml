@@ -124,6 +124,22 @@
             <Setter Property="Padding" Value="10,10,0,0" />
         </Style>
 
+        <!--  Стиль для ввода текста при регистрации и авторизации {PasswordBox}  -->
+        <Style x:Key="inputPasswordBox_style" TargetType="PasswordBox">
+            <Setter Property="Width" Value="350" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="PasswordChar" Value="*" />
+            <Setter Property="Margin" Value="150,20,0,0" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Background" Value="#5D00CC" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Padding" Value="10,15,0,0" />
+            <Setter Property="MaxLength" Value="15" />
+        </Style>
+
         <!--  Стиль ддля кнопки регистрацци {Button}  -->
         <Style x:Key="RegistrationButton_style" TargetType="Button">
             <Setter Property="FontSize" Value="30" />

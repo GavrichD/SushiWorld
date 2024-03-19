@@ -164,7 +164,7 @@ namespace SushiWorld
             // Добавление в КЕШ
             if (refreshCount == -1)
             {
-                
+
                 if (MessageBox.Show("Вы хотите удалить блюдо?", "Тех-поддержка", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
                     List<string> deleteArray = spliter(refreshFoodName);
@@ -172,33 +172,37 @@ namespace SushiWorld
                     Settings.Default.Save();
 
 
-                    refreshWindow();
+                    generateFoodCard();
                 }
 
                 return;
             }
 
+            // Увеличение количества добавленных в корзину блюд
             refreshCount++;
 
-            List<string> newArray = spliter(refreshFoodName);
-            Settings.Default["Basket"] = String.Join(";", newArray);
-            Settings.Default.Save();
-            Settings.Default["Basket"] += $"{refreshFoodName.ToString()}|{refreshCount};";
+            // Создание списка с добаленными блюдами и их количеством
+            List<string> BasketFoodArray = spliter(refreshFoodName);
+            BasketFoodArray.Add($"{refreshFoodName.ToString()}|{refreshCount}");
+            BasketFoodArray.Sort();
+            Settings.Default["Basket"] = String.Join(";", BasketFoodArray);
             Settings.Default.Save();
 
-            refreshWindow();
+            generateFoodCard();
 
         }
 
+        // Разделение строки кеша на отдельные компоненты
         private List<string> spliter(string refreshFoodName)
         {
+            // Разделение кеша на отдельные блюда
             string[] array = Settings.Default["Basket"].ToString().Split(';');
             List<string> returnArray = new List<string>();
-            foreach (string s in array)
+            foreach (string arrayElement in array)
             {
-                if (s.Split('|')[0] != refreshFoodName.ToString())
+                if (arrayElement.Split('|')[0] != refreshFoodName.ToString() && arrayElement.Length != 0)
                 {
-                    returnArray.Add(s);
+                    returnArray.Add(arrayElement);
                 }
             }
 

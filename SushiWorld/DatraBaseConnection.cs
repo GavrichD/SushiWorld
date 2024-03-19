@@ -11,13 +11,11 @@ namespace SushiWorld
     {
         
         public int userActiveId;
-        public string URL = "data source=5.tcp.eu.ngrok.io, 17047;" +
+        public string URL = "data source=5.tcp.eu.ngrok.io, 15534;" +
             "Database=Sushi_World;" +
             "User Id=DanyaGavrichenko;" +
             "Password=danya_003;" +
             "TrustServerCertificate=True;";
-
-
 
 
         // получение id пользователя для регистрации

@@ -21,6 +21,7 @@ namespace SushiWorld
     {
         public TextBlock clearTextBlock = null;
         public TextBox enterTextBox = null;
+        public PasswordBox enterPasswordBox = null;
         public RegistrationWindow()
         {
             InitializeComponent();
@@ -104,19 +105,32 @@ namespace SushiWorld
                 clearTextBlock.Visibility = Visibility.Visible;
             }
         }
+        public void checkEmptyPasswordBox(object sender)
+        {
+            enterPasswordBox = sender as PasswordBox;
+            if (clearTextBlock == null)
+                return;
 
+            if (enterPasswordBox.Password.Length == 0)
+            {
+                clearTextBlock.Visibility = Visibility.Visible;
+            }
+        }
         public void checkEmptyTextBox(object sender, RoutedEventArgs e)
         {
 
             enterTextBox = sender as TextBox;
-            if (clearTextBlock == null)
+            if (enterTextBox == null)
+            {
+                checkEmptyPasswordBox(sender);
                 return;
+            }
 
             if (enterTextBox.Text.Length == 0)
             {
                 clearTextBlock.Visibility = Visibility.Visible;
             }
-
+           
         }
 
         // Переход к окну авторизации

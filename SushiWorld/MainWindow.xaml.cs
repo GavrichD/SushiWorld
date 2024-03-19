@@ -90,6 +90,7 @@ namespace SushiWorld
         // Переход к окну Заказов
         public void GoOrderWindow(object sender, RoutedEventArgs e)
         {
+
             Console.WriteLine("open Order window");
             OrderWindow orderWindow = new OrderWindow()
             {

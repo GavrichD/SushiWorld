@@ -96,23 +96,31 @@ namespace SushiWorld
 
             countOfFood++;
 
-            List<string> newArray = spliter();
+            /*List<string> newArray = spliter();
             Settings.Default["Basket"] = String.Join(";", newArray);
             Settings.Default.Save();
             Settings.Default["Basket"] += $"{Settings.Default["FoodName"].ToString()}|{countOfFood};";
+            Settings.Default.Save();*/
+
+            List<string> BasketFoodArray = spliter();
+            BasketFoodArray.Add($"{Settings.Default["FoodName"].ToString()}|{countOfFood}");
+            BasketFoodArray.Sort();
+            Settings.Default["Basket"] = String.Join(";", BasketFoodArray);
             Settings.Default.Save();
 
         }
 
+        // Разделение строки кеша на отдельные компоненты
         private List<string> spliter()
         {
+            // Разделение кеша на отдельные блюда
             string[] array = Settings.Default["Basket"].ToString().Split(';');
             List<string> returnArray = new List<string>();
-            foreach (string s in array)
+            foreach (string arrayElement in array)
             {
-                if (s.Split('|')[0] != Settings.Default["FoodName"].ToString())
+                if (arrayElement.Split('|')[0] != Settings.Default["FoodName"].ToString() && arrayElement.Length != 0)
                 {
-                    returnArray.Add(s);
+                    returnArray.Add(arrayElement);
                 }
             }
 

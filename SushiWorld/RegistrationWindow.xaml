@@ -64,7 +64,7 @@
                     <StackPanel VerticalAlignment="Center" Style="{StaticResource StackPanelRegistration_style}">
                         <Grid x:Name="Ввод_Имени_пользователя">
                             <Image Source="Images/Пользователь.png" Style="{StaticResource inputHintImage_style}" />
-                            <TextBox MouseLeave="checkEmptyTextBox" Style="{StaticResource inputTextBox_style}" />
+                            <TextBox MouseLeave="checkEmptyTextBox" MaxLength="50" Style="{StaticResource inputTextBox_style}" />
                             <TextBlock
                                 MouseEnter="ClearTextBox"
                                 Style="{StaticResource hintText_style}"
@@ -72,7 +72,7 @@
                         </Grid>
                         <Grid x:Name="Ввод_Почты_пользователя">
                             <Image Source="Images/ПочтаИконка.png" Style="{StaticResource inputHintImage_style}" />
-                            <TextBox MouseLeave="checkEmptyTextBox" Style="{StaticResource inputTextBox_style}" />
+                            <TextBox MouseLeave="checkEmptyTextBox" MaxLength="25" Style="{StaticResource inputTextBox_style}" />
                             <TextBlock
                                 MouseEnter="ClearTextBox"
                                 Style="{StaticResource hintText_style}"
@@ -80,15 +80,15 @@
                         </Grid>
                         <Grid x:Name="Ввод_Телефона_Пользователя">
                             <Image Source="Images/ТелефонИконка.png" Style="{StaticResource inputHintImage_style}" />
-                            <TextBox MouseLeave="checkEmptyTextBox" Style="{StaticResource inputTextBox_style}" />
+                            <TextBox MouseLeave="checkEmptyTextBox" MaxLength="11" Style="{StaticResource inputTextBox_style}" />
                             <TextBlock
                                 MouseEnter="ClearTextBox"
                                 Style="{StaticResource hintText_style}"
-                                Text="Введите Телефон" />
+                                Text="8900..." />
                         </Grid>
                         <Grid x:Name="Ввод_Пароля_пользователя">
                             <Image Source="Images/Пароль.png" Style="{StaticResource inputHintImage_style}" />
-                            <TextBox MouseLeave="checkEmptyTextBox" Style="{StaticResource inputTextBox_style}" />
+                            <PasswordBox MouseLeave="checkEmptyTextBox" Style="{StaticResource inputPasswordBox_style}" />
                             <TextBlock
                                 MouseEnter="ClearTextBox"
                                 Style="{StaticResource hintText_style}"
@@ -96,7 +96,7 @@
                         </Grid>
                         <Grid x:Name="Ввод_Повтора_Пароля_пользователя">
                             <Image Source="Images/Пароль.png" Style="{StaticResource inputHintImage_style}" />
-                            <TextBox MouseLeave="checkEmptyTextBox" Style="{StaticResource inputTextBox_style}" />
+                            <PasswordBox MouseLeave="checkEmptyTextBox" Style="{StaticResource inputPasswordBox_style}" />
                             <TextBlock
                                 MouseEnter="ClearTextBox"
                                 Style="{StaticResource hintText_style}"
