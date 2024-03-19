@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{722CD42A-5F40-4F1C-BB9B-CF142B3F9F79}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SushiWorld</RootNamespace>
+    <AssemblyName>SushiWorld</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="BasketWindow.xaml.cs">
+      <DependentUpon>BasketWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DatraBaseConnection.cs" />
+    <Compile Include="FoodCardWindow.xaml.cs">
+      <DependentUpon>FoodCardWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OrderWindow.xaml.cs">
+      <DependentUpon>OrderWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationWindow.xaml.cs">
+      <DependentUpon>RegistrationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SaleWindow.xaml.cs">
+      <DependentUpon>SaleWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccount.xaml.cs">
+      <DependentUpon>UserAccount.xaml</DependentUpon>
+    </Compile>
+    <Page Include="BasketWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FoodCardWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="OrderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegistrationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SaleWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Телефон.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\СушиЛоготип.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Почта.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Регистрация.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Корзина.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Авторизация.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Информация.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Акции.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Суши.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ЗАказать.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Назад.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Пароль.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Пользователь.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ПочтаИконка.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ТелефонИконка.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Десерты.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Вода.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Салат.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Ролл.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\СушиИконка.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Торт.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Календарь.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Блины_с_вареньем.png" />
+    <Resource Include="Images\Вода_в_бутылке.png" />
+    <Resource Include="Images\Калифорния.png" />
+    <Resource Include="Images\Лосось.png" />
+    <Resource Include="Images\Нигири.png" />
+    <Resource Include="Images\Овощной.png" />
+    <Resource Include="Images\Угорь.png" />
+    <Resource Include="Images\Филадельфия.png" />
+    <Resource Include="Images\Цезарь.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Оливье.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\кола_добрый.png" />
+    <Resource Include="Images\Молочный коктейль.png" />
+    <Resource Include="Images\Мороженое.png" />
+    <Resource Include="Images\Суши с креветкой.png" />
+    <Resource Include="Images\Чизкейк.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Суши с лососем.png" />
+    <Resource Include="Images\Суши с тунцом.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

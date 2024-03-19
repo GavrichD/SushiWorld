@@ -1,0 +1,369 @@
+﻿<Application
+    x:Class="SushiWorld.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SushiWorld"
+    StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <!--
+            #F8CE0D - Желтый
+            #AB7AF5 - фиолетовый сток
+            #936AD2 - фиолетовый не сток
+            #38BB35 - Зеленый темный
+            #55E552 - Зеленый светлый
+            #258623 - Зеленый очень темный
+        -->
+        <!--  Стиль для шапки приложения {Grid}  -->
+        <Style x:Key="HeadGrid_style" TargetType="Grid">
+            <Setter Property="Height" Value="150" />
+            <Setter Property="Background" Value="#F8CE0D" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+
+        </Style>
+        <!--  Стиль для Заглавного текста {TextBlock}  -->
+        <Style x:Key="TitleText_style" TargetType="TextBlock">
+            <Setter Property="Height" Value="65" />
+            <Setter Property="FontSize" Value="60" />
+            <Setter Property="TextAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0,0,200,0" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Width" Value="350" />
+        </Style>
+
+        <!--  Стиль для логотипа {Image}  -->
+        <Style x:Key="LogoImage_style" TargetType="Image">
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Height" Value="300" />
+            <Setter Property="Width" Value="300" />
+            <Setter Property="Margin" Value="-20,-75,0,0" />
+        </Style>
+
+        <!--  Стиль для телефона и почты в шапке программы {TextBox}  -->
+        <Style x:Key="orgInformationTextStyle" TargetType="TextBox">
+            <Setter Property="IsReadOnly" Value="True" />
+            <Setter Property="FontSize" Value="40" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Width" Value="350" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+
+        <!--  Стиль для маленького значка телефона {Image}  -->
+        <Style x:Key="SmallPicture_style" TargetType="Image">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Height" Value="40" />
+            <Setter Property="Width" Value="40" />
+        </Style>
+        <!--  Стиль для Тела программы {Grid}  -->
+        <Style x:Key="Body_style" TargetType="Grid">
+            <Setter Property="Height" Value="711" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+        </Style>
+        <!--  Стиль для областей на главном экране {Border}  -->
+        <Style x:Key="SelectionBordersOnMainWindow_style" TargetType="Border">
+            <Setter Property="Width" Value="290" />
+            <Setter Property="Height" Value="290" />
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="Background" Value="#AB7AF5" />
+        </Style>
+
+        <!--  Стиль для картинок в кнопках {Image}  -->
+        <Style x:Key="ButtonImage_style" TargetType="Image">
+            <Setter Property="Width" Value="200" />
+            <Setter Property="Height" Value="200" />
+            <Setter Property="Margin" Value="0,30,0,0" />
+        </Style>
+
+        <!--  Стиль для текста обычного {TextBlock}  -->
+        <Style x:Key="normalText_style" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="40" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style>
+
+
+        <!--  СТИЛИ ДЛЯ РЕГИСТРАЦИИ  -->
+        <!--  Стиль для кнопки назад {Border}  -->
+        <Style x:Key="GoBackButton_style" TargetType="Border">
+            <Setter Property="Width" Value="100" />
+            <Setter Property="CornerRadius" Value="0 20 0 0" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Background" Value="#AB7AF5" />
+        </Style>
+        <!--  Стиль для кнопки назад {Image}  -->
+        <Style x:Key="backImage_style" TargetType="Image">
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Height" Value="100" />
+        </Style>
+
+        <!--  Стиль для регистрационной панели {Border}  -->
+        <Style x:Key="registrationPanel" TargetType="Border">
+            <Setter Property="Width" Value="800" />
+            <Setter Property="Height" Value="600" />
+            <Setter Property="Margin" Value="100,0,0,0" />
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="Background" Value="#5D3B7D" />
+        </Style>
+
+        <!--  Стиль для ввода текста при регистрации и авторизации {TextBox}  -->
+        <Style x:Key="inputTextBox_style" TargetType="TextBox">
+            <Setter Property="Width" Value="350" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Margin" Value="150,20,0,0" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Background" Value="#5D00CC" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Padding" Value="10,10,0,0" />
+        </Style>
+
+        <!--  Стиль ддля кнопки регистрацци {Button}  -->
+        <Style x:Key="RegistrationButton_style" TargetType="Button">
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Width" Value="300" />
+            <Setter Property="Height" Value="80" />
+            <Setter Property="Margin" Value="0,40,0,0" />
+            <Setter Property="Background" Value="Black" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="15">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#16101E" />
+                    <Setter Property="Foreground" Value="White" />
+                </Trigger>
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Background" Value="#1E132A" />
+                    <Setter Property="Foreground" Value="White" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!--  Стиль для намекающего текста {TextBloxk}  -->
+        <Style x:Key="hintText_style" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Width" Value="350" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Foreground" Value="LightGray" />
+            <Setter Property="Background" Value="#5D00CC" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="150,20,0,0" />
+            <Setter Property="Padding" Value="10,10,0,0" />
+            <Setter Property="TextAlignment" Value="Left" />
+        </Style>
+
+
+        <!--  Стиль для маленьких картинок при вводе {Image}  -->
+        <Style x:Key="inputHintImage_style" TargetType="Image">
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Width" Value="50" />
+            <Setter Property="Margin" Value="0,20,270,0" />
+        </Style>
+
+        <!--  Стиль для StackPanel регистрации {StackPanel}  -->
+        <Style x:Key="StackPanelRegistration_style" TargetType="StackPanel">
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="Width" Value="500" />
+            <Setter Property="Margin" Value="0,0,30,0" />
+        </Style>
+
+        <!--  Стиль для нижней панели окна заказы {Border}  -->
+        <Style x:Key="bottomMenuPanel_style" TargetType="Border">
+            <Setter Property="Height" Value="100" />
+            <Setter Property="Margin" Value="100,0,0,0" />
+
+            <Setter Property="CornerRadius" Value="0 20 0 0" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="Background" Value="#5D00CC" />
+        </Style>
+
+        <!--  Стиль для Dock Panel Меню {Dock Panel}  -->
+        <Style x:Key="menuDockerPanel_style" TargetType="DockPanel">
+            <Setter Property="Width" Value="600" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <!--  Стиль для иконок {Border}  -->
+        <Style x:Key="menuIcons_style" TargetType="Border">
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Height" Value="100" />
+            <Setter Property="Background" Value="#5D00CC" />
+            <Setter Property="Margin" Value="0,0,20,0" />
+            <Setter Property="CornerRadius" Value="30,30,0,0" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+
+        <!--  Стиль для иконок меню Image {Image}  -->
+        <Style x:Key="pictureMenu_style" TargetType="Image">
+            <Setter Property="Width" Value="70" />
+            <Setter Property="Height" Value="70" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="Margin" Value="0,10,0,0" />
+        </Style>
+
+        <!--  Стиль для показа блюд {Border }  -->
+        <Style x:Key="MenuShower_style" TargetType="Border">
+            <Setter Property="Width" Value="1000" />
+            <Setter Property="Height" Value="625" />
+            <Setter Property="Background" Value="#F5F3D0" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+        </Style>
+
+        <!--  Стиль для показа акций {Grid }  -->
+        <Style x:Key="Sale_style" TargetType="Grid">
+            <Setter Property="Width" Value="1000" />
+            <Setter Property="Height" Value="710" />
+
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+        </Style>
+
+        <!--  Стиль для карточек {Border}  -->
+        <Style x:Key="saleCard_style" TargetType="Border">
+            <Setter Property="Width" Value="400" />
+            <Setter Property="Height" Value="600" />
+            <Setter Property="CornerRadius" Value="20" />
+
+        </Style>
+
+        <!--  Стиль для картинок акций {Image}  -->
+        <Style x:Key="SaleImage_style" TargetType="Image">
+            <Setter Property="Width" Value="300" />
+            <Setter Property="Height" Value="300" />
+            <Setter Property="Margin" Value="0,0,0,100" />
+        </Style>
+
+        <!--  Стиль для карточки товара {Border}  -->
+        <!--  #9D6034  -->
+        <!--  #C88251  -->
+        <Style x:Key="foodCard_Style" TargetType="Border">
+            <Setter Property="Width" Value="900" />
+            <Setter Property="Height" Value="600" />
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="Margin" Value="100,0,0,0" />
+            <Setter Property="Background" Value="#9D6034" />
+
+        </Style>
+        <!--  Стиль для прокрутки ингридиентов {ScrollViewer}  -->
+        <Style x:Key="IngridientScroll_style" TargetType="ScrollViewer">
+            <Setter Property="Width" Value="200" />
+            <Setter Property="Height" Value="400" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0,0,20,0" />
+            <Setter Property="Background" Value="#C88251" />
+        </Style>
+
+        <!--  Стиль для цены {Border}  -->
+        <Style x:Key="Cost_Style" TargetType="Border">
+            <Setter Property="Width" Value="150" />
+            <Setter Property="Height" Value="200" />
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="Margin" Value="20,0,0,30" />
+            <Setter Property="Background" Value="#C88251" />
+
+        </Style>
+
+        <!--  Стиль для Веса {Border}  -->
+        <Style x:Key="Weight_Style" TargetType="Border">
+            <Setter Property="Width" Value="150" />
+            <Setter Property="Height" Value="200" />
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="Margin" Value="20,30,0,0" />
+            <Setter Property="Background" Value="#C88251" />
+
+        </Style>
+
+        <!--  Стиль для Кнопки {Border}  -->
+        <Style x:Key="TakeOrder_Style" TargetType="Border">
+            <Setter Property="Width" Value="150" />
+            <Setter Property="Height" Value="100" />
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="20,0,0,0" />
+            <Setter Property="Background" Value="#AB7AF5" />
+
+        </Style>
+        
+        <!-- Текст -->
+        <Style x:Key="text" TargetType="TextBlock">
+            
+            <Setter Property="FontSize" Value="25" />
+            <Setter Property="Padding" Value="0 20 0 0" />
+            <Setter Property="FontWeight" Value="Bold" />
+            
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+        <!--  Стиль для Рейтинга {Border}  -->
+        <Style x:Key="Rating_Style" TargetType="Border">
+            <Setter Property="Width" Value="200" />
+            <Setter Property="Height" Value="100" />
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="Margin" Value="200,0,0,30" />
+            <Setter Property="Background" Value="#C88251" />
+
+        </Style>
+        
+        <!--  Стиль для Времени {Border}  -->
+        <Style x:Key="Time_Style" TargetType="Border">
+            <Setter Property="Width" Value="200" />
+            <Setter Property="Height" Value="100" />
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="Margin" Value="0,0,300,30" />
+            <Setter Property="Background" Value="#C88251" />
+
+        </Style>
+
+        <!--  Стиль для Названия {Border}  -->
+        <Style x:Key="Name_Style" TargetType="Border">
+            <Setter Property="Width" Value="450" />
+            <Setter Property="Height" Value="100" />
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="Margin" Value="0,30,50,0" />
+            <Setter Property="Background" Value="#C88251" />
+
+        </Style>
+
+        <!--  Стиль для Фото {Border}  -->
+        <Style x:Key="Photo_Style" TargetType="Border">
+            <Setter Property="Width" Value="450" />
+            <Setter Property="Height" Value="300" />
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0,0,50,0" />
+            <Setter Property="Background" Value="#C88251" />
+
+        </Style>
+
+    </Application.Resources>
+</Application>
