@@ -54,11 +54,11 @@
                         Style="{StaticResource normalText_style}"
                         Text="Назад" />
                 </Grid>
-
-
             </Border>
 
+            <!--Основной блок регистрации (весь экран без верхней плашки)-->
             <Border x:Name="RegistrationPannel" Style="{StaticResource registrationPanel}">
+                <!---->
                 <Grid>
 
                     <StackPanel VerticalAlignment="Center" Style="{StaticResource StackPanelRegistration_style}">

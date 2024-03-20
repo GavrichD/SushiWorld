@@ -226,7 +226,7 @@ namespace SushiWorld
             TextBlock Title = new TextBlock()
             {
                 FontSize = 40,
-                Height = 50,
+                
                 TextWrapping = TextWrapping.Wrap,
                 Text = titleText,
                 FontWeight = FontWeights.Bold,
@@ -252,7 +252,7 @@ namespace SushiWorld
             StackPanel textSetter = new StackPanel()
             {
                 Width = 420,
-                Height = 200,
+                VerticalAlignment= VerticalAlignment.Center,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 
             };
@@ -290,7 +290,7 @@ namespace SushiWorld
             Console.WriteLine(foodImageName);
             Image foodCardPicture = new Image()
             {
-                Height = 280,
+                Height = 250,
                 Width = 280,
                 Source = new BitmapImage(
                 new Uri(

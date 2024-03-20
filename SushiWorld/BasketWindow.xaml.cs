@@ -22,7 +22,7 @@ namespace SushiWorld
     {
         public DataBaseConnection databaseConnection = new DataBaseConnection();
         public string computerFoldersPATH = Convert.ToString(String.Join("\\", Environment.CurrentDirectory.ToString().Split('\\').Take(
-    Environment.CurrentDirectory.ToString().Split('\\').Length - 2))) + "/Images/";
+        Environment.CurrentDirectory.ToString().Split('\\').Length - 2))) + "/Images/";
 
         public int refreshCount = 0;
         public BasketWindow()
@@ -77,8 +77,11 @@ namespace SushiWorld
             if (Settings.Default["Basket"].ToString().Length == 0)
             {
                 MessageBox.Show("Корзина пуста", "Тех-поддержка", MessageBoxButton.OK);
+
+                ShowerItems.Child = generateEmptyBasketPicture();
                 return;
             }
+            
             foreach (var food in Settings.Default["Basket"].ToString().Split(';'))
             {
                 TextBlock Title = new TextBlock();
@@ -112,10 +115,9 @@ namespace SushiWorld
                             picture = generateFoodImage(informationPoint.Value);
                             break;
 
-
                     }
 
-                    
+
                     Console.WriteLine("\n");
                     
                 }
@@ -142,20 +144,6 @@ namespace SushiWorld
 
             }
         }
-        private void refreshWindow()
-        {
-            Console.WriteLine("open Order window");
-            BasketWindow basketWindow = new BasketWindow()
-            {
-                WindowStartupLocation = WindowStartupLocation.Manual,
-                Left = Left,
-                Top = Top
-            };
-
-            this.Visibility = Visibility.Collapsed;
-            basketWindow.Show();
-        }
-
 
         // Перерассчет количества
         public void TakeOrderClick(string refreshFoodName)
@@ -224,6 +212,8 @@ namespace SushiWorld
             };
             return normalText;
         }
+
+        // Удаление блюда
         private Border MinusFood(string buttonName, int count)
         {
             Console.WriteLine(buttonName);
@@ -248,21 +238,23 @@ namespace SushiWorld
                 Background = new SolidColorBrush(Colors.White),
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center,
-                
+
 
             };
 
             minusFoodButton.Child = minus;
             minusFoodButton.MouseDown += (sender, args) =>
             {
-                refreshCount = count-2;
+                refreshCount = count - 2;
                 Console.WriteLine("Подробнее");
                 TakeOrderClick(String.Join(" ", buttonName.Split('_')));
             };
 
             return minusFoodButton;
         }
-        
+
+        // Добавление блюда
+
         private Border PlusFood(string buttonName, int count)
         {
             Console.WriteLine(buttonName);
@@ -342,6 +334,7 @@ namespace SushiWorld
             return Title;
         }
 
+        //Создание границы для кнопок
         private Border createBottomBorder()
         {
             Border TopB = new Border
@@ -353,6 +346,7 @@ namespace SushiWorld
             return TopB;
         }
 
+        //Создание границы для кнопок
         private StackPanel generateStackTextPanel()
         {
             StackPanel textSetter = new StackPanel()
@@ -403,6 +397,25 @@ namespace SushiWorld
                        $@"{computerFoldersPATH}{foodImageName}")),
                 HorizontalAlignment = HorizontalAlignment.Left,
                 Margin = new Thickness(50, 0, 0, 0),
+                VerticalAlignment = VerticalAlignment.Center,
+
+            };
+            return foodCardPicture;
+        }
+
+        // Генерация картинки пустой корзины
+        private Image generateEmptyBasketPicture()
+        {
+            
+            Image foodCardPicture = new Image()
+            {
+                Height = 300,
+                Width = 300,
+                Source = new BitmapImage(
+                new Uri(
+                       $@"{computerFoldersPATH}Корзина пуста.png")),
+                HorizontalAlignment = HorizontalAlignment.Center,
+                Margin = new Thickness(0, 0, 0, 0),
                 VerticalAlignment = VerticalAlignment.Center,
 
             };

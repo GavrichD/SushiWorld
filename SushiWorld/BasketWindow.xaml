@@ -39,10 +39,14 @@
 
             <!--  Меню Визуализация  -->
             <Border x:Name="MenuShower" Style="{StaticResource MenuShower_style}">
-                <ScrollViewer>
-                    <StackPanel x:Name="scrollFoodCard" />
+                <Grid >
+                    <Border x:Name="ShowerItems"/>
+                    <ScrollViewer>
+                        <StackPanel x:Name="scrollFoodCard" />
 
-                </ScrollViewer>
+                    </ScrollViewer>
+                </Grid>
+                
             </Border>
             <!--  Блок с категориями  -->
             <Border x:Name="Меню" Style="{StaticResource bottomMenuPanel_style}" />

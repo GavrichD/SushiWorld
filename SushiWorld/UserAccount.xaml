@@ -58,12 +58,15 @@
 
             </Border>
 
+            <!--  Основное тело страницы регистрации без верхней плашки -->
             <Border x:Name="RegistrationPannel" Style="{StaticResource registrationPanel}">
                 <Grid>
 
+                    
+                    <!--  Основное тело страницы регистрации где границы начинаются по краям зоны произведения регистрации (Фиолетовый квадрат)-->
                     <StackPanel VerticalAlignment="Center" Style="{StaticResource StackPanelRegistration_style}">
 
-
+                        <!--  Основное тело страницы регистрации исключая иконку "Регистрация"-->
                         <Grid x:Name="Ввод_Телефона_Пользователя">
                             <Image Source="Images/ТелефонИконка.png" Style="{StaticResource inputHintImage_style}" />
                             <TextBox MouseLeave="checkEmptyTextBox" Style="{StaticResource inputTextBox_style}" />
@@ -80,12 +83,15 @@
                                 Style="{StaticResource hintText_style}"
                                 Text="Введите Пароль" />
                         </Grid>
-
+                        
+                        <!--  Кнопка авторизации  -->
                         <Button
                             Click="AuthorizationUser"
                             Content="Авторизация"
                             Style="{StaticResource RegistrationButton_style}" />
                     </StackPanel>
+
+                    <!--  Иконка регистрации  -->
                     <Border
                         x:Name="Регистрация"
                         Margin="40,0,0,0"

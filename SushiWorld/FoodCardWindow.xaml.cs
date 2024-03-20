@@ -96,17 +96,17 @@ namespace SushiWorld
 
             countOfFood++;
 
-            /*List<string> newArray = spliter();
+            List<string> newArray = spliter();
             Settings.Default["Basket"] = String.Join(";", newArray);
             Settings.Default.Save();
             Settings.Default["Basket"] += $"{Settings.Default["FoodName"].ToString()}|{countOfFood};";
-            Settings.Default.Save();*/
+            Settings.Default.Save();
 
-            List<string> BasketFoodArray = spliter();
+            /*List<string> BasketFoodArray = spliter();
             BasketFoodArray.Add($"{Settings.Default["FoodName"].ToString()}|{countOfFood}");
             BasketFoodArray.Sort();
             Settings.Default["Basket"] = String.Join(";", BasketFoodArray);
-            Settings.Default.Save();
+            Settings.Default.Save();*/
 
         }
 

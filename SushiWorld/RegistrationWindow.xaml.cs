@@ -20,6 +20,7 @@ namespace SushiWorld
     public partial class RegistrationWindow : Window
     {
         public TextBlock clearTextBlock = null;
+        public TextBlock clearPasswordBlock = null;
         public TextBox enterTextBox = null;
         public PasswordBox enterPasswordBox = null;
         public RegistrationWindow()
@@ -45,7 +46,7 @@ namespace SushiWorld
 
         }
 
-        // Уыеличение картинки при наведении на кнопку
+        // Увеличение картинки при наведении на кнопку
         public void DoBig(object sender, RoutedEventArgs e)
         {
             Border bigBorder = sender as Border;
@@ -99,12 +100,19 @@ namespace SushiWorld
         {
             if (clearTextBlock == null)
                 return;
-            
+
             if (enterTextBox.Text.Length == 0)
+            {
+                clearTextBlock.Visibility = Visibility.Visible;
+                
+            }
+            else if (enterPasswordBox.Password.Length == 0)
             {
                 clearTextBlock.Visibility = Visibility.Visible;
             }
         }
+
+        //
         public void checkEmptyPasswordBox(object sender)
         {
             enterPasswordBox = sender as PasswordBox;
@@ -116,13 +124,17 @@ namespace SushiWorld
                 clearTextBlock.Visibility = Visibility.Visible;
             }
         }
+
+        //
         public void checkEmptyTextBox(object sender, RoutedEventArgs e)
         {
 
             enterTextBox = sender as TextBox;
+            if (sender.GetType() == typeof(PasswordBox))
+                checkEmptyPasswordBox(sender);
             if (enterTextBox == null)
             {
-                checkEmptyPasswordBox(sender);
+                
                 return;
             }
 

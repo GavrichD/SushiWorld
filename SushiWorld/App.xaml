@@ -42,14 +42,23 @@
 
         <!--  Стиль для телефона и почты в шапке программы {TextBox}  -->
         <Style x:Key="orgInformationTextStyle" TargetType="TextBox">
+            <!--Разрешаем только чтение(не даём стереть информацию)-->
             <Setter Property="IsReadOnly" Value="True" />
+            <!--Размер шрифта -->
             <Setter Property="FontSize" Value="40" />
+            <!--Жирный шрифт -->
             <Setter Property="FontWeight" Value="Bold" />
+            <!--Размер в высоту -->
             <Setter Property="Height" Value="50" />
+            <!--Размер в ширину -->
             <Setter Property="Width" Value="350" />
+            <!--Закрепляем этот TextBox справа -->
             <Setter Property="HorizontalAlignment" Value="Right" />
+            <!--Прозрачный фон -->
             <Setter Property="Background" Value="Transparent" />
+            <!--Прозрачные границы -->
             <Setter Property="BorderBrush" Value="Transparent" />
+            <!--Ширина рамки -->
             <Setter Property="BorderThickness" Value="0" />
         </Style>
 

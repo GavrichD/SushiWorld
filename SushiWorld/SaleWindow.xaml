@@ -38,6 +38,7 @@
         <Grid x:Name="Body" Style="{StaticResource Body_style}">
 
             <Grid Style="{StaticResource Sale_style}">
+                <!--  Левая иконка  -->
                 <Border
                     x:Name="HappyBirthdayBanner"
                     Margin="70,0,0,0"
@@ -55,6 +56,7 @@
                             Text="День Рождения" />
                     </Grid>
                 </Border>
+                <!--  Разворот левой иконки  -->
                 <Border
                     x:Name="HappyBirthday"
                     Margin="70,0,0,0"
@@ -74,6 +76,7 @@
                         TextAlignment="Center"
                         TextWrapping="Wrap" />
                 </Border>
+                <!--  Правая иконка  -->
                 <Border
                     Name="CoolDaysBanner"
                     Margin="0,0,70,0"
@@ -91,6 +94,7 @@
                             Text="Удачные даты" />
                     </Grid>
                 </Border>
+                <!--  Разворот правой иконки  -->
                 <Border
                     x:Name="CoolDays"
                     Margin="0,0,70,0"
@@ -106,7 +110,7 @@
                         VerticalAlignment="Center"
                         Foreground="White"
                         Style="{StaticResource normalText_style}"
-                        Text="В удачные даты вамбудут предоставлены подарочные акции от ресторана! Проверяйте приложения почаще"
+                        Text="В удачные даты вам будут предоставлены подарочные акции от ресторана! Проверяйте приложения почаще"
                         TextWrapping="Wrap" />
                 </Border>
             </Grid>
