@@ -84,8 +84,9 @@ namespace SushiWorld
         public void TakeOrderClick(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("TakeOrder");
-            
+
             // Добавление в КЕШ
+            Console.WriteLine("count of food: " + countOfFood);
             if (countOfFood == 0)
             {
                 countOfFood++;
@@ -96,17 +97,36 @@ namespace SushiWorld
 
             countOfFood++;
 
-            List<string> newArray = spliter();
+            /*List<string> newArray = spliter();
             Settings.Default["Basket"] = String.Join(";", newArray);
             Settings.Default.Save();
             Settings.Default["Basket"] += $"{Settings.Default["FoodName"].ToString()}|{countOfFood};";
-            Settings.Default.Save();
-
-            /*List<string> BasketFoodArray = spliter();
-            BasketFoodArray.Add($"{Settings.Default["FoodName"].ToString()}|{countOfFood}");
-            BasketFoodArray.Sort();
-            Settings.Default["Basket"] = String.Join(";", BasketFoodArray);
             Settings.Default.Save();*/
+
+            List<string> BasketFoodArray = spliter();
+            Console.WriteLine(BasketFoodArray.Count);
+            if (BasketFoodArray.Count == 0)
+            {
+                Console.WriteLine("==");
+                BasketFoodArray.Add($"{Settings.Default["FoodName"].ToString()}|{countOfFood};");
+            } else
+            {
+                Console.WriteLine("!=");
+                BasketFoodArray.Add($"{Settings.Default["FoodName"].ToString()}|{countOfFood};");
+            }
+
+                
+            BasketFoodArray.Sort();
+            foreach(string item in BasketFoodArray)
+            {
+                Console.WriteLine(item);
+                Console.WriteLine("++++");
+            }
+            Console.WriteLine(String.Join(";", BasketFoodArray));
+            Console.WriteLine("-------------------------------------------------------------------------------");
+            Settings.Default["Basket"] = String.Join(";", BasketFoodArray);
+            Settings.Default.Save();
+            
 
         }
 
@@ -115,11 +135,14 @@ namespace SushiWorld
         {
             // Разделение кеша на отдельные блюда
             string[] array = Settings.Default["Basket"].ToString().Split(';');
+            Console.WriteLine(Settings.Default["Basket"].ToString());
             List<string> returnArray = new List<string>();
             foreach (string arrayElement in array)
             {
                 if (arrayElement.Split('|')[0] != Settings.Default["FoodName"].ToString() && arrayElement.Length != 0)
                 {
+                    Console.WriteLine(arrayElement);
+                    Console.WriteLine("\\\\\\");
                     returnArray.Add(arrayElement);
                 }
             }

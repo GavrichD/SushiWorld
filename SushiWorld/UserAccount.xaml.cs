@@ -85,7 +85,8 @@ namespace SushiWorld
         public void AuthorizationUser(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("do authorization");
-            
+            Settings.Default["Basket"] = "";
+            Settings.Default.Save();
         }
 
 

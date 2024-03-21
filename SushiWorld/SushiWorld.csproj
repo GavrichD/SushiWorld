@@ -231,5 +231,8 @@
   <ItemGroup>
     <Resource Include="Images\Корзина пуста.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Оплата.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
