@@ -46,18 +46,18 @@
 
                     </ScrollViewer>
                 </Grid>
-                
+
             </Border>
             <!--  Блок с оплатой  -->
             <Border x:Name="PaymentBlock" Style="{StaticResource bottomMenuPanel_style}" >
                 <Grid>
                     <Image Source="Images/Оплата.png" Style="{StaticResource backImage_style}" HorizontalAlignment="Right" Margin="0,0,50,0" />
-                    <Border Width="100">
-                        <Button x:Name="PaymentButton" />
+                    <Border Width="100" Style="{StaticResource PaymentButton_style}" Height="100" VerticalAlignment="Center" >
+                        <Button x:Name="PaymentButton" Margin="-200,5,200,0"   />
                     </Border>
                 </Grid>
             </Border>
-            
+
 
             <!--  Кнопка назад  -->
             <Border
@@ -78,9 +78,6 @@
                         Text="Назад" />
                 </Grid>
             </Border>
-
-            
-
         </Grid>
     </Grid>
 </Window>
