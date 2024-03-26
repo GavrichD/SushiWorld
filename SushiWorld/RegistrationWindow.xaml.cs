@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -87,7 +88,7 @@ namespace SushiWorld
             Console.WriteLine("do registration");
         }
 
-        
+
         // Очистка текстового ввода
         public void ClearTextBox(object sender, RoutedEventArgs e)
         {
@@ -104,7 +105,7 @@ namespace SushiWorld
             if (enterTextBox.Text.Length == 0)
             {
                 clearTextBlock.Visibility = Visibility.Visible;
-                
+
             }
             else if (enterPasswordBox.Password.Length == 0)
             {
@@ -134,7 +135,7 @@ namespace SushiWorld
                 checkEmptyPasswordBox(sender);
             if (enterTextBox == null)
             {
-                
+
                 return;
             }
 
@@ -142,7 +143,7 @@ namespace SushiWorld
             {
                 clearTextBlock.Visibility = Visibility.Visible;
             }
-           
+
         }
 
         // Переход к окну авторизации
@@ -159,5 +160,57 @@ namespace SushiWorld
             this.Visibility = Visibility.Collapsed;
             userAccount.Show();
         }
+
+        // Регистрация аккаунта
+        public void RegistrationProcess(object sender, RoutedEventArgs e)
+        {
+            Boolean CheckRegistration = true;
+
+            if (Name.Text.Length == 0)
+            {
+                MessageBox.Show("Please enter your name.");
+                CheckRegistration = false;
+                Console.WriteLine(1);
+            }
+
+            if (EMail.Text.Length == 0)
+            {
+                MessageBox.Show("Please enter a valid email address.");
+                CheckRegistration = false;
+                Console.WriteLine(2);
+            }
+
+            if (PhoneNumber.Text.Length != 11)
+            {
+                MessageBox.Show("Please enter a valid phone number with 11 digits.");
+                CheckRegistration = false;
+                Console.WriteLine(3);
+            }
+
+            if (UserPassword.Password.Length == 0)
+            {
+                MessageBox.Show("Please enter a password.");
+                CheckRegistration = false;
+                Console.WriteLine(4);
+            }
+
+            if (AgainUserPassword.Password != UserPassword.Password)
+            {
+                MessageBox.Show("Passwords do not match. Please re-enter your password.");
+                CheckRegistration = false;
+                Console.WriteLine(5);
+            }
+
+            if (CheckRegistration == true)
+            {
+                Console.WriteLine(6);
+                MessageBox.Show("Регистрация прошла успешно!.");
+
+                GoAuthorizationWindow(sender, e);
+            }
+        }
     }
 }
+
+
+

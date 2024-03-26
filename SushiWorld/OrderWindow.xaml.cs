@@ -29,7 +29,7 @@ namespace SushiWorld
         {
             InitializeComponent();
             
-            generateFoodCard(databaseConnection.returnFoodInformation("ВОДА"));
+            generateFoodCard(databaseConnection.DataBaseUserData("ВОДА"));
 
         }
 
@@ -114,7 +114,7 @@ namespace SushiWorld
             Border foodCategory = sender as Border;
             Dictionary<string, Dictionary<string, string>> returnedFoodInformation;
             returnedFoodInformation =
-                databaseConnection.returnFoodInformation(foodCategory.Name.ToString());
+                databaseConnection.DataBaseUserData(foodCategory.Name.ToString());
             generateFoodCard(returnedFoodInformation);
             
 

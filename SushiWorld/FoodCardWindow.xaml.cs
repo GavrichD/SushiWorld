@@ -80,6 +80,8 @@ namespace SushiWorld
             smallBorder.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#AB7AF5");
         }
 
+        public List<string> ListOfFood = new List<string>();
+
         // Добавление в корзину
         public void TakeOrderClick(object sender, RoutedEventArgs e)
         {
@@ -87,9 +89,10 @@ namespace SushiWorld
 
             // Добавление в КЕШ
             Console.WriteLine("count of food: " + countOfFood);
-            if (countOfFood == 0)
+            if (!ListOfFood.Contains(Settings.Default["FoodName"].ToString()))
             {
-                countOfFood++;
+                ListOfFood.Add(Settings.Default["FoodName"].ToString());
+                countOfFood = 1;
                 Settings.Default["Basket"] += $"{Settings.Default["FoodName"].ToString()}|{countOfFood};";
                 Settings.Default.Save();
                 return;
@@ -126,7 +129,9 @@ namespace SushiWorld
             Console.WriteLine("-------------------------------------------------------------------------------");
             Settings.Default["Basket"] = String.Join(";", BasketFoodArray);
             Settings.Default.Save();
-            
+            Settings.Default["Basket"] += ";";
+            Settings.Default.Save();
+
 
         }
 

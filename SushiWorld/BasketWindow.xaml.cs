@@ -51,6 +51,12 @@ namespace SushiWorld
 
         }
 
+        // Уменьшение картинки при отведении мыши с кнопки
+        public void PaymentClick(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine(1);
+        }
+
         // Переход к окну регистрации
         public void GoBack(object sender, RoutedEventArgs e)
         {
@@ -84,62 +90,65 @@ namespace SushiWorld
             
             foreach (var food in Settings.Default["Basket"].ToString().Split(';'))
             {
-                TextBlock Title = new TextBlock();
-                TextBlock cost = new TextBlock();
-                TextBlock weight = new TextBlock();
-                Image picture = new Image();
-                Grid cardBorder = generateGrid();
-
-                StackPanel cardPanel = new StackPanel();
-                cardPanel = generateStackTextPanel();
-                Console.WriteLine(food);
-                if (food.Length == 0)
-                    return;
-                foreach(var informationPoint in databaseConnection.returnBasketFoodInf(food.Split('|')[0]))
+                if (food.Length > 0)
                 {
-                    
+                    TextBlock Title = new TextBlock();
+                    TextBlock cost = new TextBlock();
+                    TextBlock weight = new TextBlock();
+                    Image picture = new Image();
+                    Grid cardBorder = generateGrid();
 
-                    Console.WriteLine(informationPoint.Key + ": " + informationPoint.Value);
-                    switch (informationPoint.Key)
+                    StackPanel cardPanel = new StackPanel();
+                    cardPanel = generateStackTextPanel();
+                    Console.WriteLine(food);
+
+                    foreach (var informationPoint in databaseConnection.returnBasketFoodInf(food.Split('|')[0]))
                     {
-                        case ("Название"):
-                            Title = generateTitleText(informationPoint.Value);
-                            break;
-                        case ("Цена"):
-                            cost = generateNormalText("Цена: " + informationPoint.Value);
-                            break;
-                        case ("Вес"):
-                            weight = generateNormalText("Вес: " + informationPoint.Value);
-                            break;
-                        case ("Фото"):
-                            picture = generateFoodImage(informationPoint.Value);
-                            break;
+
+
+                        Console.WriteLine(informationPoint.Key + ": " + informationPoint.Value);
+                        switch (informationPoint.Key)
+                        {
+                            case ("Название"):
+                                Title = generateTitleText(informationPoint.Value);
+                                break;
+                            case ("Цена"):
+                                cost = generateNormalText("Цена: " + informationPoint.Value);
+                                break;
+                            case ("Вес"):
+                                weight = generateNormalText("Вес: " + informationPoint.Value);
+                                break;
+                            case ("Фото"):
+                                picture = generateFoodImage(informationPoint.Value);
+                                break;
+
+                        }
+
+
+                        Console.WriteLine("\n");
 
                     }
+                    cardPanel.Children.Add(Title);
+                    cardPanel.Children.Add(cost);
+                    cardPanel.Children.Add(weight);
+                    cardBorder.Children.Add(picture);
+                    cardPanel.Children.Add(ReturnCount("В заказе: " + food.Split('|')[1] + "шт."));
+
+                    string MinusFoodName = String.Join("_", food.Split('|')[0].ToString().Split(' '));
+                    string PlusFoodName = String.Join("R", food.Split('|')[0].ToString().Split(' '));
 
 
-                    Console.WriteLine("\n");
-                    
+                    cardBorder.Children.Add(createBottomBorder());
+                    cardBorder.Children.Add(cardPanel);
+
+                    cardBorder.Children.Add(MinusFood(MinusFoodName, Convert.ToInt32(food.Split('|')[1].ToString())));
+                    cardBorder.Children.Add(PlusFood(PlusFoodName, Convert.ToInt32(food.Split('|')[1].ToString())));
+
+
+
+                    scrollFoodCard.Children.Add(cardBorder);
                 }
-                cardPanel.Children.Add(Title);
-                cardPanel.Children.Add(cost);
-                cardPanel.Children.Add(weight);
-                cardBorder.Children.Add(picture);
-                cardPanel.Children.Add(ReturnCount("В заказе: " + food.Split('|')[1] + "шт."));
-
-                string MinusFoodName = String.Join("_", food.Split('|')[0].ToString().Split(' '));
-                string PlusFoodName = String.Join("R", food.Split('|')[0].ToString().Split(' '));
-
-
-                cardBorder.Children.Add(createBottomBorder());
-                cardBorder.Children.Add(cardPanel);
-
-                cardBorder.Children.Add(MinusFood(MinusFoodName, Convert.ToInt32(food.Split('|')[1].ToString())));
-                cardBorder.Children.Add(PlusFood(PlusFoodName, Convert.ToInt32(food.Split('|')[1].ToString())));
-
-
-
-                scrollFoodCard.Children.Add(cardBorder);
+                
 
 
             }

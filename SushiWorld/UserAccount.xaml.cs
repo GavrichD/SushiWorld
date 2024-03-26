@@ -1,6 +1,6 @@
-﻿using SushiWorld.Properties;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,7 +69,7 @@ namespace SushiWorld
         public void GoBack(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("go back");
-            
+
             MainWindow mainWindow = new MainWindow()
             {
                 WindowStartupLocation = WindowStartupLocation.Manual,
@@ -138,5 +138,8 @@ namespace SushiWorld
             this.Visibility = Visibility.Collapsed;
             registrationWindow.Show();
         }
+
+
+        
     }
 }

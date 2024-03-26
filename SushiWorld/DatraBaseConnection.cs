@@ -9,9 +9,9 @@ namespace SushiWorld
 {
     public class DataBaseConnection
     {
-        
+
         public int userActiveId;
-        public string URL = "data source=7.tcp.eu.ngrok.io, 16611;" +
+        public string URL = "data source=6.tcp.eu.ngrok.io, 16707;" +
             "Database=Sushi_World;" +
             "User Id=DanyaGavrichenko;" +
             "Password=danya_003;" +
@@ -46,10 +46,10 @@ namespace SushiWorld
         }
 
         // Получение списка блюд с информацией из базы данных
-        public Dictionary<string, Dictionary<string, string>> returnFoodInformation(string choosenFoodCategory)
+        public Dictionary<string, Dictionary<string, string>> DataBaseUserData(string choosenFoodCategory)
         {
             Dictionary<string, Dictionary<string, string>> foodCardInformation = new Dictionary<string, Dictionary<string, string>>();
-            
+
             using (SqlConnection conn = new SqlConnection(URL))
             {
                 conn.Open();
@@ -70,10 +70,10 @@ namespace SushiWorld
                         {
                             {"Количество", ""}, {"Время", ""}, {"Цена", ""}, {"Вес", ""}, {"Рейтинг", ""}, {"Фото", ""},
                         };
-                       
+
                         if (!foodCardInformation.ContainsKey(("" + dr["Название блюда"]).Trim()))
                         {
-                          
+
 
                             insertDict["Количество"] = ("" + dr["Количество"]).Trim();
                             insertDict["Время"] = ("" + dr["Время готовности"]).Trim();
@@ -84,7 +84,7 @@ namespace SushiWorld
 
                             foodCardInformation[("" + dr["Название блюда"]).Trim()] = insertDict;
                         }
-                            
+
                     }
                     dr.Close();
                 }
@@ -96,10 +96,10 @@ namespace SushiWorld
         // получение информации по 1 блдюду
         public Dictionary<string, string> returnAllFoodInformation(string ChoosenFoodName)
         {
-            
+
             Dictionary<string, string> cardFoodInformationDict = new Dictionary<string, string>()
             {
-                {"Название","" }, {"Количество", ""}, {"Время", ""}, {"Цена", ""}, 
+                {"Название","" }, {"Количество", ""}, {"Время", ""}, {"Цена", ""},
                 {"Вес", ""}, {"Рейтинг", ""}, {"Фото", ""}, {"Ингридиент", "" }
             };
             using (SqlConnection conn = new SqlConnection(URL))
@@ -118,7 +118,7 @@ namespace SushiWorld
                     SqlDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
-                        
+
 
                         cardFoodInformationDict["Название"] = ("" + dr["Название блюда"]).Trim();
                         cardFoodInformationDict["Количество"] = ("" + dr["Количество"]).Trim();
@@ -129,7 +129,7 @@ namespace SushiWorld
                         cardFoodInformationDict["Фото"] = ("" + dr["Фотография блюда"]).Trim();
                         cardFoodInformationDict["Ингридиент"] += ("" + dr["Ингридиент"]).Trim() + "-";
 
-                        
+
 
                     }
                     dr.Close();
@@ -166,8 +166,8 @@ namespace SushiWorld
 
 
                         basketFoodInformation["Название"] = ("" + dr["Название блюда"]).Trim();
-                        
-                        
+
+
                         basketFoodInformation["Цена"] = ("" + dr["Цена"]).Trim();
                         basketFoodInformation["Вес"] = ("" + dr["Вес"]).Trim();
                         basketFoodInformation["Фото"] = ("" + dr["Фотография блюда"]).Trim();
@@ -182,5 +182,36 @@ namespace SushiWorld
             }
             return basketFoodInformation;
         }
+
+        /*// Получение списка блюд с информацией из базы данных
+        public Dictionary<string, Dictionary<string, string>> DataBaseUserData(string UserDataSet)
+        {
+            Dictionary<string, Dictionary<string, string>> UserData = new Dictionary<string, Dictionary<string, string>>();
+
+            using (SqlConnection conn = new SqlConnection(URL))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = $@"
+                    Use Sushi_World
+                    SELECT [Номер телефона], [Пароль]
+                    FROM [Пользователь]
+                    Where [ID пользователя] = N'1';
+                    ";
+
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+
+
+                    }
+                    dr.Close();
+                }
+                conn.Close();
+            }
+            return UserData;
+        }*/
     }
 }
