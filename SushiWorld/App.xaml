@@ -261,6 +261,9 @@
             <Setter Property="VerticalAlignment" Value="Top" />
         </Style>
 
+        
+        
+        <!--  Стили для страницы акций  -->
         <!--  Стиль для показа акций {Grid }  -->
         <Style x:Key="Sale_style" TargetType="Grid">
             <Setter Property="Width" Value="1000" />
@@ -284,6 +287,35 @@
             <Setter Property="Height" Value="300" />
             <Setter Property="Margin" Value="0,0,0,100" />
         </Style>
+
+
+
+        <!--  Стили для страницы информации  -->
+        <!--  Стиль для показа информации {Grid }  -->
+        <Style x:Key="info_style" TargetType="Grid">
+            <Setter Property="Width" Value="1000" />
+            <Setter Property="Height" Value="710" />
+
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+        </Style>
+
+        <!--  Стиль для карточек {Border}  -->
+        <Style x:Key="infoCard_style" TargetType="Border">
+            <Setter Property="Width" Value="400" />
+            <Setter Property="Height" Value="600" />
+            <Setter Property="CornerRadius" Value="20" />
+
+        </Style>
+
+        <!--  Стиль для картинок ресторанов {Image}  -->
+        <Style x:Key="infoImage_style" TargetType="Image">
+            <Setter Property="Width" Value="200" />
+            <Setter Property="Height" Value="200" />
+            <Setter Property="Margin" Value="0,0,0,100" />
+        </Style>
+
+
 
         <!--  Стиль для карточки товара {Border}  -->
         <!--  #9D6034  -->

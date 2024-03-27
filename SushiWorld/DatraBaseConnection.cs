@@ -11,7 +11,7 @@ namespace SushiWorld
     {
 
         public int userActiveId;
-        public string URL = "data source=6.tcp.eu.ngrok.io, 16707;" +
+        public string URL = "data source=0.tcp.eu.ngrok.io, 16847;" +
             "Database=Sushi_World;" +
             "User Id=DanyaGavrichenko;" +
             "Password=danya_003;" +
@@ -183,7 +183,7 @@ namespace SushiWorld
             return basketFoodInformation;
         }
 
-        /*// Получение списка блюд с информацией из базы данных
+        /*// Получение к базе данных для авторизации
         public Dictionary<string, Dictionary<string, string>> DataBaseUserData(string UserDataSet)
         {
             Dictionary<string, Dictionary<string, string>> UserData = new Dictionary<string, Dictionary<string, string>>();

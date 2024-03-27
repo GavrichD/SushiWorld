@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:SushiWorld"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="MainWindow"
+    Title="Главная страница"
     Width="1100"
     Height="900"
     ResizeMode="NoResize"
@@ -62,7 +62,7 @@
                     <Image
                         x:Name="Order"
                         Source="Images/ЗАказать.png"
-                        Style="{StaticResource ButtonImage_style}" />
+                        Style="{StaticResource ButtonImage_style}" Margin="16"/>
                     <TextBlock Style="{StaticResource normalText_style}" Text="Заказать" />
                 </StackPanel>
             </Border>
