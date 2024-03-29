@@ -37,22 +37,28 @@
         <Grid x:Name="Body" Style="{StaticResource Body_style}">
 
             <Grid Style="{StaticResource info_style}">
-                <!--  Левая иконка  -->
+                <!--  Левая Верхняя иконка  -->
                 <Border
                     x:Name="HappyBirthdayBanner"
-                    Margin="70,0,0,0"
+                    Margin="70,50,0,0"
+                    VerticalAlignment="Top"
                     HorizontalAlignment="Left"
                     Background="#D157CA"
                     MouseEnter="ShowText"
                     Style="{StaticResource infoCard_style}">
                     <Grid>
-                        <Image Source="Images/Торт.png" Style="{StaticResource infoImage_style}" />
+                        <Border CornerRadius="20" Height="300" Width="400">
+                            <Border.Background>
+                                <ImageBrush Stretch="Fill"  ImageSource="Images/Beluga_rest.jpg"/>
+                            </Border.Background>
+                        </Border>
+
                         <TextBlock
                             Margin="0,250,0,0"
                             VerticalAlignment="Center"
                             Foreground="White"
                             Style="{StaticResource normalText_style}"
-                            Text="День Рождения" />
+                            Text="Санкт-Петербург" />
                     </Grid>
                 </Border>
                 <!--  Разворот левой иконки  -->
@@ -75,10 +81,64 @@
                         TextAlignment="Center"
                         TextWrapping="Wrap" />
                 </Border>
+
+
+                <!--  Левая Верхняя иконка  -->
+                <Border
+                x:Name="Therd_Rest_Banner"
+                Margin="70,50,0,0"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Left"
+                Background="#D157CA"
+                MouseEnter="ShowText"
+                Style="{StaticResource infoCard_style}">
+                                <Grid>
+                                    <Border CornerRadius="20" Height="300" Width="400">
+                                        <Border.Background>
+                                            <ImageBrush Stretch="Fill"  ImageSource="Images/Beluga_rest.jpg"/>
+                                        </Border.Background>
+                                    </Border>
+
+                                    <TextBlock
+                        Margin="0,250,0,0"
+                        VerticalAlignment="Center"
+                        Foreground="White"
+                        Style="{StaticResource normalText_style}"
+                        Text="Санкт-Петербург" />
+                                </Grid>
+                            </Border>
+                            <!--  Разворот Левой Верхней иконки  -->
+                            <Border
+                x:Name="Therd_Rest"
+                Margin="70,0,0,0"
+                HorizontalAlignment="Left"
+                Background="#A749A1"
+                MouseLeave="HideText"
+                Style="{StaticResource infoCard_style}"
+                Visibility="Hidden">
+
+                                <TextBlock
+                    Margin="0,0,0,0"
+                    Padding="0,0,0,0"
+                    VerticalAlignment="Center"
+                    Foreground="White"
+                    Style="{StaticResource normalText_style}"
+                    Text="Установите дату Вашего рождения и получайте подарки от ресторана"
+                    TextAlignment="Center"
+                    TextWrapping="Wrap" />
+                </Border>
+
+
+
+
+
+
+
                 <!--  Правая иконка  -->
                 <Border
                     Name="CoolDaysBanner"
-                    Margin="0,0,70,0"
+                    Margin="0,50,70,0"
+                    VerticalAlignment="Top"
                     HorizontalAlignment="Right"
                     Background="#403CB4"
                     MouseEnter="ShowText"

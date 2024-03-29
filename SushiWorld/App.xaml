@@ -303,16 +303,18 @@
         <!--  Стиль для карточек {Border}  -->
         <Style x:Key="infoCard_style" TargetType="Border">
             <Setter Property="Width" Value="400" />
-            <Setter Property="Height" Value="600" />
+            <Setter Property="Height" Value="300" />
             <Setter Property="CornerRadius" Value="20" />
+            
 
         </Style>
 
         <!--  Стиль для картинок ресторанов {Image}  -->
         <Style x:Key="infoImage_style" TargetType="Image">
-            <Setter Property="Width" Value="200" />
-            <Setter Property="Height" Value="200" />
+            <Setter Property="Width" Value="400" />
+            <Setter Property="Height" Value="300" />
             <Setter Property="Margin" Value="0,0,0,100" />
+            
         </Style>
 
 

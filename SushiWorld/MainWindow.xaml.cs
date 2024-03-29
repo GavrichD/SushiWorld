@@ -39,7 +39,7 @@ namespace SushiWorld
             bigBorder.Width = 300;
             bigBorder.Height = 300;
             bigBorder.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#936AD2");
-            
+
         }
         // Уменьшение картинки при отведении мыши с кнопки
         public void DoSmall(object sender, RoutedEventArgs e)
@@ -53,7 +53,7 @@ namespace SushiWorld
             smallBorder.Width = 290;
             smallBorder.Height = 290;
             smallBorder.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#AB7AF5");
-            
+
         }
 
         // Переход к окну регистрации
@@ -133,5 +133,19 @@ namespace SushiWorld
             saleWindow.Show();
         }
 
+        // Переход к окну Акции
+        public void GoInfoWindow(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("open Info window");
+            InformationWindow InformationWindow = new InformationWindow()
+            {
+                WindowStartupLocation = WindowStartupLocation.Manual,
+                Left = Left,
+                Top = Top
+            };
+
+            this.Visibility = Visibility.Collapsed;
+            InformationWindow.Show();
+        }
     }
 }

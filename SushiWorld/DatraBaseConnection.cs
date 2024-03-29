@@ -11,7 +11,7 @@ namespace SushiWorld
     {
 
         public int userActiveId;
-        public string URL = "data source=0.tcp.eu.ngrok.io, 16847;" +
+        public string URL = "data source=7.tcp.eu.ngrok.io, 17543;" +
             "Database=Sushi_World;" +
             "User Id=DanyaGavrichenko;" +
             "Password=danya_003;" +
