@@ -39,14 +39,15 @@
             <Grid Style="{StaticResource info_style}">
                 <!--  Левая Верхняя иконка  -->
                 <Border
-                    x:Name="HappyBirthdayBanner"
-                    Margin="70,50,0,0"
+                    x:Name="FirstRestBanner"
+                    Margin="70,30,0,0"
                     VerticalAlignment="Top"
                     HorizontalAlignment="Left"
                     Background="#D157CA"
                     MouseEnter="ShowText"
                     Style="{StaticResource infoCard_style}">
                     <Grid>
+                        
                         <Border CornerRadius="20" Height="300" Width="400">
                             <Border.Background>
                                 <ImageBrush Stretch="Fill"  ImageSource="Images/Beluga_rest.jpg"/>
@@ -58,123 +59,177 @@
                             VerticalAlignment="Center"
                             Foreground="White"
                             Style="{StaticResource normalText_style}"
-                            Text="Санкт-Петербург" />
+                            Text="Москва" />
+
+                        <Border
+                        x:Name="FirstRest"
+                        Margin="0,0,0,0"
+                        HorizontalAlignment="Left"
+                        Background="#A749A1"
+                        MouseLeave="HideText"
+                        Style="{StaticResource infoCard_style}"
+                        Visibility="Hidden">
+
+                            <TextBlock
+                            Margin="0,0,0,0"
+                            Padding="0,0,0,0"
+                            VerticalAlignment="Center"
+                            Foreground="White"
+                            Style="{StaticResource normalText_style}"
+                            Text="С 11:00 До 23:30
+                                Санкт-Петербург, улица Пушкина дом 38/1"
+                            TextAlignment="Center"
+                            TextWrapping="Wrap" />
+                        </Border>
                     </Grid>
                 </Border>
-                <!--  Разворот левой иконки  -->
+
+                <!-- Левая Нижняя иконка  -->
                 <Border
-                    x:Name="HappyBirthday"
-                    Margin="70,0,0,0"
+                    x:Name="SecondRestBanner"
+                    Margin="70,0,0,30"
+                    VerticalAlignment="Bottom"
                     HorizontalAlignment="Left"
-                    Background="#A749A1"
-                    MouseLeave="HideText"
-                    Style="{StaticResource infoCard_style}"
-                    Visibility="Hidden">
-
-                    <TextBlock
-                        Margin="0,0,0,0"
-                        Padding="0,0,0,0"
-                        VerticalAlignment="Center"
-                        Foreground="White"
-                        Style="{StaticResource normalText_style}"
-                        Text="Установите дату Вашего рождения и получайте подарки от ресторана"
-                        TextAlignment="Center"
-                        TextWrapping="Wrap" />
-                </Border>
-
-
-                <!--  Левая Верхняя иконка  -->
-                <Border
-                x:Name="Therd_Rest_Banner"
-                Margin="70,50,0,0"
-                VerticalAlignment="Bottom"
-                HorizontalAlignment="Left"
-                Background="#D157CA"
-                MouseEnter="ShowText"
-                Style="{StaticResource infoCard_style}">
-                                <Grid>
-                                    <Border CornerRadius="20" Height="300" Width="400">
-                                        <Border.Background>
-                                            <ImageBrush Stretch="Fill"  ImageSource="Images/Beluga_rest.jpg"/>
-                                        </Border.Background>
-                                    </Border>
-
-                                    <TextBlock
-                        Margin="0,250,0,0"
-                        VerticalAlignment="Center"
-                        Foreground="White"
-                        Style="{StaticResource normalText_style}"
-                        Text="Санкт-Петербург" />
-                                </Grid>
-                            </Border>
-                            <!--  Разворот Левой Верхней иконки  -->
-                            <Border
-                x:Name="Therd_Rest"
-                Margin="70,0,0,0"
-                HorizontalAlignment="Left"
-                Background="#A749A1"
-                MouseLeave="HideText"
-                Style="{StaticResource infoCard_style}"
-                Visibility="Hidden">
-
-                                <TextBlock
-                    Margin="0,0,0,0"
-                    Padding="0,0,0,0"
-                    VerticalAlignment="Center"
-                    Foreground="White"
-                    Style="{StaticResource normalText_style}"
-                    Text="Установите дату Вашего рождения и получайте подарки от ресторана"
-                    TextAlignment="Center"
-                    TextWrapping="Wrap" />
-                </Border>
-
-
-
-
-
-
-
-                <!--  Правая иконка  -->
-                <Border
-                    Name="CoolDaysBanner"
-                    Margin="0,50,70,0"
-                    VerticalAlignment="Top"
-                    HorizontalAlignment="Right"
-                    Background="#403CB4"
+                    Background="#D157CA"
                     MouseEnter="ShowText"
                     Style="{StaticResource infoCard_style}">
                     <Grid>
-                        <Image Source="Images/Календарь.png" Style="{StaticResource infoImage_style}" />
+
+                        <Border CornerRadius="20" Height="300" Width="400">
+                            <Border.Background>
+                                <ImageBrush Stretch="Fill"  ImageSource="Images/ВторойРесторанФото.png"/>
+                            </Border.Background>
+                        </Border>
+
                         <TextBlock
                             Margin="0,250,0,0"
                             VerticalAlignment="Center"
                             Foreground="White"
                             Style="{StaticResource normalText_style}"
-                            Text="Удачные даты" />
+                            Text="Санкт-Петербург" />
+
+                        <Border
+                            x:Name="SecondRest"
+                            Margin="0,0,0,0"
+                            HorizontalAlignment="Left"
+                            Background="#A749A1"
+                            MouseLeave="HideText"
+                            Style="{StaticResource infoCard_style}"
+                            Visibility="Hidden">
+
+                            <TextBlock
+                                Margin="0,0,0,0"
+                                Padding="0,0,0,0"
+                                VerticalAlignment="Center"
+                                Foreground="White"
+                                Style="{StaticResource normalText_style}"
+                                Text="С 10:00 До 23:00
+                                    Санкт-Петербург, улица Ленина 2"
+                                TextAlignment="Center"
+                                TextWrapping="Wrap" />
+                        </Border>
                     </Grid>
                 </Border>
-                <!--  Разворот правой иконки  -->
+
+
+                <!--  Правая Верхняя иконка  -->
                 <Border
-                    x:Name="CoolDays"
-                    Margin="0,0,70,0"
+                    x:Name="TherdRestBanner"
+                    Margin="0,30,60,0"
+                    VerticalAlignment="Top"
                     HorizontalAlignment="Right"
-                    Background="#373573"
-                    MouseLeave="HideText"
-                    Style="{StaticResource infoCard_style}"
-                    Visibility="Hidden">
+                    Background="#D157CA"
+                    MouseEnter="ShowText"
+                    Style="{StaticResource infoCard_style}">
+                    <Grid>
 
-                    <TextBlock
-                        Margin="0,0,0,0"
-                        Padding="0,0,0,0"
-                        VerticalAlignment="Center"
-                        Foreground="White"
-                        Style="{StaticResource normalText_style}"
-                        Text="В удачные даты вам будут предоставлены подарочные акции от ресторана! Проверяйте приложения почаще"
-                        TextWrapping="Wrap" />
+                        <Border CornerRadius="20" Height="300" Width="400">
+                            <Border.Background>
+                                <ImageBrush Stretch="Fill"  ImageSource="Images/Beluga_rest.jpg"/>
+                            </Border.Background>
+                        </Border>
+
+                        <TextBlock
+                            Margin="0,250,0,0"
+                            VerticalAlignment="Center"
+                            Foreground="White"
+                            Style="{StaticResource normalText_style}"
+                            Text="Тарков" />
+
+                        <Border
+                            x:Name="TherdRest"
+                            Margin="0,0,0,0"
+                            HorizontalAlignment="Left"
+                            Background="#A749A1"
+                            MouseLeave="HideText"
+                            Style="{StaticResource infoCard_style}"
+                            Visibility="Hidden">
+
+                            <TextBlock
+                                Margin="0,0,0,0"
+                                Padding="0,0,0,0"
+                                VerticalAlignment="Center"
+                                Foreground="White"
+                                Style="{StaticResource normalText_style}"
+                                Text="С 9:30 До 00:00
+                                    Тарков, улица Улица Климова 8"
+                                TextAlignment="Center"
+                                TextWrapping="Wrap" />
+                        </Border>
+                    </Grid>
                 </Border>
-            </Grid>
 
-            <!--  Кнопка назад  -->
+                <!--  Правая Нижняя иконка  -->
+                <Border
+                    x:Name="FourdRestBanner"
+                    Margin="0,0,60,30"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Right"
+                    Background="#D157CA"
+                    MouseEnter="ShowText"
+                    Style="{StaticResource infoCard_style}">
+                    <Grid>
+
+                        <Border CornerRadius="20" Height="300" Width="400">
+                            <Border.Background>
+                                <ImageBrush Stretch="Fill"  ImageSource="Images/ТретийРесторан.jpg"/>
+                            </Border.Background>
+                        </Border>
+
+                        <TextBlock
+                            Margin="0,250,0,0"
+                            VerticalAlignment="Center"
+                            Foreground="White"
+                            Style="{StaticResource normalText_style}"
+                            Text="Казань" />       
+
+                        <Border
+                            x:Name="FourdRest"
+                            Margin="0,0,0,0"
+                            HorizontalAlignment="Left"
+                            Background="#A749A1"
+                            MouseLeave="HideText"
+                            Style="{StaticResource infoCard_style}"
+                            Visibility="Hidden">
+
+                            <TextBlock
+                                Margin="0,0,0,0"
+                                Padding="0,0,0,0"
+                                VerticalAlignment="Center"
+                                Foreground="White"
+                                Style="{StaticResource normalText_style}"
+                                Text=" С 11:30 До 23:30
+                                    Казань, улица Рыбная дом 113"
+                                TextAlignment="Center"
+                                TextWrapping="Wrap" />
+                        </Border>
+                    </Grid>
+                </Border>
+
+
+
+            </Grid>
+                <!--  Кнопка назад  -->
             <Border
                 x:Name="goBackButton"
                 MouseDown="GoBack"

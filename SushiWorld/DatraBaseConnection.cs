@@ -11,7 +11,7 @@ namespace SushiWorld
     {
 
         public int userActiveId;
-        public string URL = "data source=7.tcp.eu.ngrok.io, 17543;" +
+        public string URL = "data source=6.tcp.eu.ngrok.io, 16136;" +
             "Database=Sushi_World;" +
             "User Id=DanyaGavrichenko;" +
             "Password=danya_003;" +
@@ -42,6 +42,47 @@ namespace SushiWorld
                     dr.Close();
                 }
                 conn.Close();
+            }
+        }
+
+
+        //ПОЛНАЯ ПРОВЕРКА ОРИГИНАЛЬНОСТИ ВВЕДЕННЫХ ДАННЫХ
+        //Доделать проверку
+        public bool checkDataUserOnDataBase(string EMail, string PhoneNumber)
+        {
+            using (SqlConnection conn = new SqlConnection(URL))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"
+                    Use Sushi_World
+                    SELECT [Электронная почта], [Номер телефона]
+                    FROM Пользователь;
+                    ";
+
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        
+
+                        if (EMail == dr["Электронная почта"].ToString().Trim())
+                        {
+                            return false;
+                        }
+                        
+
+                        if (PhoneNumber == dr["Номер телефона"].ToString().Trim())
+                        {
+                            return false;
+                        }
+                    }
+                    dr.Close();
+                }
+                conn.Close();
+               
+                return true;
             }
         }
 

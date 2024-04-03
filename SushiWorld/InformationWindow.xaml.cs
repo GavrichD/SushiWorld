@@ -65,13 +65,21 @@ namespace SushiWorld
             Border saleBorder = sender as Border;
             switch (saleBorder.Name.ToString())
             {
-                case ("CoolDaysBanner"):
-                    BannerName = "CoolDays";
-                    CoolDays.Visibility = Visibility.Visible;
+                case ("FirstRestBanner"):
+                    BannerName = "FirstRest";
+                    FirstRest.Visibility = Visibility.Visible;
                     break;
-                case ("HappyBirthdayBanner"):
-                    BannerName = "HappyBirthday";
-                    HappyBirthday.Visibility = Visibility.Visible;
+                case ("SecondRestBanner"):
+                    BannerName = "SecondRest";
+                    SecondRest.Visibility = Visibility.Visible;
+                    break;
+                case ("TherdRestBanner"):
+                    BannerName = "TherdRest";
+                    TherdRest.Visibility = Visibility.Visible;
+                    break;
+                case ("FourdRestBanner"):
+                    BannerName = "FourdRest";
+                    FourdRest.Visibility = Visibility.Visible;
                     break;
             }
         }
@@ -82,13 +90,21 @@ namespace SushiWorld
             Border saleBorder = sender as Border;
             switch (BannerName)
             {
-                case ("CoolDays"):
+                case ("FirstRest"):
                     BannerName = null;
-                    CoolDays.Visibility = Visibility.Hidden;
+                    FirstRest.Visibility = Visibility.Hidden;
                     break;
-                case ("HappyBirthday"):
+                case ("SecondRest"):
                     BannerName = null;
-                    HappyBirthday.Visibility = Visibility.Hidden;
+                    SecondRest.Visibility = Visibility.Hidden;
+                    break;
+                case ("TherdRest"):
+                    BannerName = null;
+                    TherdRest.Visibility = Visibility.Hidden;
+                    break;
+                case ("FourdRest"):
+                    BannerName = null;
+                    FourdRest.Visibility = Visibility.Hidden;
                     break;
             }
         }

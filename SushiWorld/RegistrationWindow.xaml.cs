@@ -161,6 +161,21 @@ namespace SushiWorld
             userAccount.Show();
         }
 
+        // Переход к окну авторизации
+        public void GoMainWindow(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("open registration window");
+            MainWindow mainWindow = new MainWindow()
+            {
+                WindowStartupLocation = WindowStartupLocation.Manual,
+                Left = Left,
+                Top = Top
+            };
+
+            this.Visibility = Visibility.Collapsed;
+            mainWindow.Show();
+        }
+
         // Регистрация аккаунта
         public void RegistrationProcess(object sender, RoutedEventArgs e)
         {
@@ -201,12 +216,12 @@ namespace SushiWorld
                 Console.WriteLine(5);
             }
 
+            CheckRegistration = new DataBaseConnection().checkDataUserOnDataBase(
+                EMail.Text.ToString(), PhoneNumber.Text.ToString());
             if (CheckRegistration == true)
             {
                 Console.WriteLine(6);
-                MessageBox.Show("Регистрация прошла успешно!.");
-
-                GoAuthorizationWindow(sender, e);
+                GoMainWindow(null, null); // Переход на окно авторизации
             }
         }
     }
