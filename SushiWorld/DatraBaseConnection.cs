@@ -65,13 +65,13 @@ namespace SushiWorld
                     SqlDataReader dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
-                        
+
 
                         if (EMail == dr["Электронная почта"].ToString().Trim())
                         {
                             return false;
                         }
-                        
+
 
                         if (PhoneNumber == dr["Номер телефона"].ToString().Trim())
                         {
@@ -81,10 +81,59 @@ namespace SushiWorld
                     dr.Close();
                 }
                 conn.Close();
-               
+
                 return true;
             }
         }
+
+        //Отравляем регистрационные данные в базу данных
+        public bool SendDataInDataBase(string Name, string EMail, string PhoneNumber, string Passowrd)
+        {
+            takeTruthId();
+            using (SqlConnection connection = new SqlConnection(URL))
+            {
+
+                connection.Open();
+                SqlCommand commandToAddInformationFromTable = new SqlCommand($@"
+                Use Sushi_World
+                INSERT INTO Пользователь
+                VALUES({userActiveId}, N'{Name}', N'{PhoneNumber}', N'{EMail}', N'1899-12-30', '{Passowrd}')");
+                commandToAddInformationFromTable.Connection = connection;
+                commandToAddInformationFromTable.ExecuteNonQuery();
+                return true;
+            }
+
+        }
+
+        /*public bool registarationUserInUserTableFromDataBase(Dictionary<string, string> userInformationFromRegistrationWindow)
+        {
+            Console.WriteLine("Активный id: " + activeUsersId);
+
+            takeTruthId();
+            if (!checkPhoneNumber(userInformationFromRegistrationWindow["Phone"])
+                || !checkMails(userInformationFromRegistrationWindow["Email"]))
+            {
+                return false;
+            }
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+
+                connection.Open();
+                SqlCommand commandToAddInformationFromTable = new SqlCommand($@"
+                Use VR_club
+                INSERT INTO Пользователь
+                VALUES({activeUsersId}, N'{userInformationFromRegistrationWindow["Name"]}',
+                N'{userInformationFromRegistrationWindow["Email"]}', N'{userInformationFromRegistrationWindow["Phone"]}',
+                N'{userInformationFromRegistrationWindow["Password"]}', '{userInformationFromRegistrationWindow["Status"]}')");
+                commandToAddInformationFromTable.Connection = connection;
+                commandToAddInformationFromTable.ExecuteNonQuery();
+            }
+
+            new ProgramCashReader().recordingCurrentCustomersIdInCash(activeUsersId);
+            return true;
+
+        }*/
+
 
         // Получение списка блюд с информацией из базы данных
         public Dictionary<string, Dictionary<string, string>> DataBaseUserData(string choosenFoodCategory)

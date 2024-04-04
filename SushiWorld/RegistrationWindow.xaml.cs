@@ -176,10 +176,12 @@ namespace SushiWorld
             mainWindow.Show();
         }
 
+
+
         // Регистрация аккаунта
         public void RegistrationProcess(object sender, RoutedEventArgs e)
         {
-            Boolean CheckRegistration = true;
+            bool CheckRegistration = true;
 
             if (Name.Text.Length == 0)
             {
@@ -188,14 +190,14 @@ namespace SushiWorld
                 Console.WriteLine(1);
             }
 
-            if (EMail.Text.Length == 0)
+            if (EMail.Text.Length == 0 || !IsValidEmail(EMail.Text))
             {
                 MessageBox.Show("Please enter a valid email address.");
                 CheckRegistration = false;
                 Console.WriteLine(2);
             }
 
-            if (PhoneNumber.Text.Length != 11)
+            if (PhoneNumber.Text.Length != 11 || !IsNumeric(PhoneNumber.Text))
             {
                 MessageBox.Show("Please enter a valid phone number with 11 digits.");
                 CheckRegistration = false;
@@ -216,13 +218,46 @@ namespace SushiWorld
                 Console.WriteLine(5);
             }
 
-            CheckRegistration = new DataBaseConnection().checkDataUserOnDataBase(
-                EMail.Text.ToString(), PhoneNumber.Text.ToString());
-            if (CheckRegistration == true)
+            if (CheckRegistration)
+            {
+                CheckRegistration = new DataBaseConnection().checkDataUserOnDataBase(
+                    EMail.Text.ToString(), PhoneNumber.Text.ToString());
+            }
+
+            //Вызываем отправление регистрационных данных в БД
+            bool SendDataInDataBase = true;
+            SendDataInDataBase = new DataBaseConnection().SendDataInDataBase(
+                Name.Text.ToString(), EMail.Text.ToString(), PhoneNumber.Text.ToString(), UserPassword.Password.ToString());
+
+            // Переход на окно Главное
+            if (CheckRegistration && SendDataInDataBase)
             {
                 Console.WriteLine(6);
-                GoMainWindow(null, null); // Переход на окно авторизации
+                GoAuthorizationWindow(null, null); // Переход на окно авторизации
             }
+        }
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private bool IsNumeric(string str)
+        {
+            foreach (char c in str)
+            {
+                if (!char.IsDigit(c))
+                    return false;
+            }
+            return true;
         }
     }
 }
