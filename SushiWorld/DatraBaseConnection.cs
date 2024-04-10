@@ -17,6 +17,41 @@ namespace SushiWorld
             "Password=danya_003;" +
             "TrustServerCertificate=True;";
 
+        //АВТОРИЗАЦИЯ ПОЛЬЗОВАТЕЛЯ
+        /*public bool FuncshionOfAutorization(string PhoneNumberAutorization,  string UserPasswordAutorization)
+        {
+            using (SqlConnection conn = new SqlConnection(URL))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = @"
+                    Use Sushi_World
+                    SELECT [Электронная почта], [Номер телефона]
+                    FROM Пользователь;
+                    ";
+
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+
+
+
+
+                        if (PhoneNumber == dr["Номер телефона"].ToString().Trim())
+                        {
+                            return false;
+                        }
+                    }
+                    dr.Close();
+                }
+                conn.Close();
+
+                return true;
+            }
+        }*/
+
 
         // получение id пользователя для регистрации
         public void takeTruthId()
@@ -97,45 +132,50 @@ namespace SushiWorld
                 SqlCommand commandToAddInformationFromTable = new SqlCommand($@"
                 Use Sushi_World
                 INSERT INTO Пользователь
-                VALUES({userActiveId}, N'{Name}', N'{PhoneNumber}', N'{EMail}', N'1899-12-30', '{Passowrd}')");
-                commandToAddInformationFromTable.Connection = connection;
+                VALUES({userActiveId}, N'{Name}', N'{PhoneNumber}', N'{EMail}', N'1899-12-30', '{Passowrd}')",connection);
                 commandToAddInformationFromTable.ExecuteNonQuery();
                 return true;
+
             }
 
         }
 
-        /*public bool registarationUserInUserTableFromDataBase(Dictionary<string, string> userInformationFromRegistrationWindow)
+
+        //Авторизация в бд
+
+        public bool CheckUserDataInDataBase(string PhoneNumberAutorization, string UserPasswordAutorization)
         {
-            Console.WriteLine("Активный id: " + activeUsersId);
 
-            takeTruthId();
-            if (!checkPhoneNumber(userInformationFromRegistrationWindow["Phone"])
-                || !checkMails(userInformationFromRegistrationWindow["Email"]))
-            {
-                return false;
-            }
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            {
 
+            string connectionString = "Data Source=6.tcp.eu.ngrok.io,16136;Initial Catalog=Sushi_World;User ID=DanyaGavrichenko;Password=danya_003;";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
                 connection.Open();
-                SqlCommand commandToAddInformationFromTable = new SqlCommand($@"
-                Use VR_club
-                INSERT INTO Пользователь
-                VALUES({activeUsersId}, N'{userInformationFromRegistrationWindow["Name"]}',
-                N'{userInformationFromRegistrationWindow["Email"]}', N'{userInformationFromRegistrationWindow["Phone"]}',
-                N'{userInformationFromRegistrationWindow["Password"]}', '{userInformationFromRegistrationWindow["Status"]}')");
-                commandToAddInformationFromTable.Connection = connection;
-                commandToAddInformationFromTable.ExecuteNonQuery();
+
+                string query = "SELECT [Номер телефона], [Пароль] FROM [Пользователь] WHERE [Номер телефона] = @PhoneNumber AND [Пароль] = @Password";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@PhoneNumber", PhoneNumberAutorization);
+                    command.Parameters.AddWithValue("@Password", UserPasswordAutorization);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return true; // Пользователь найден в базе данных
+                        }
+                    }
+                }
             }
 
-            new ProgramCashReader().recordingCurrentCustomersIdInCash(activeUsersId);
-            return true;
-
-        }*/
+            return false; // Пользователь не найден в базе данных
+        }
 
 
-        // Получение списка блюд с информацией из базы данных
+
+
         public Dictionary<string, Dictionary<string, string>> DataBaseUserData(string choosenFoodCategory)
         {
             Dictionary<string, Dictionary<string, string>> foodCardInformation = new Dictionary<string, Dictionary<string, string>>();

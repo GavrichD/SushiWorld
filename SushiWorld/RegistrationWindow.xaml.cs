@@ -229,7 +229,7 @@ namespace SushiWorld
             SendDataInDataBase = new DataBaseConnection().SendDataInDataBase(
                 Name.Text.ToString(), EMail.Text.ToString(), PhoneNumber.Text.ToString(), UserPassword.Password.ToString());
 
-            // Переход на окно Главное
+            // Переход на окно Авторизации
             if (CheckRegistration && SendDataInDataBase)
             {
                 Console.WriteLine(6);

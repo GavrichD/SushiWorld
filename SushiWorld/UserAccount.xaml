@@ -62,14 +62,14 @@
             <Border x:Name="RegistrationPannel" Style="{StaticResource registrationPanel}">
                 <Grid>
 
-                    
+
                     <!--  Основное тело страницы регистрации где границы начинаются по краям зоны произведения регистрации (Фиолетовый квадрат)-->
                     <StackPanel VerticalAlignment="Center" Style="{StaticResource StackPanelRegistration_style}">
 
                         <!--  Основное тело страницы регистрации исключая иконку "Регистрация"-->
                         <Grid x:Name="Ввод_Телефона_Пользователя">
                             <Image Source="Images/ТелефонИконка.png" Style="{StaticResource inputHintImage_style}" />
-                            <TextBox MouseLeave="checkEmptyTextBox" Style="{StaticResource inputTextBox_style}" />
+                            <TextBox x:Name="PhoneNumberAutorization" LostFocus="TextBox_LostFocus" MouseLeave="checkEmptyTextBox" Style="{StaticResource inputTextBox_style}" />
                             <TextBlock
                                 MouseEnter="ClearTextBox"
                                 Style="{StaticResource hintText_style}"
@@ -77,13 +77,13 @@
                         </Grid>
                         <Grid x:Name="Ввод_Пароля_пользователя" Width="500">
                             <Image Source="Images/Пароль.png" Style="{StaticResource inputHintImage_style}" />
-                            <TextBox MouseLeave="checkEmptyTextBox" Style="{StaticResource inputTextBox_style}" />
+                            <PasswordBox x:Name="UserPasswordAutorization" LostFocus="TextBox_LostFocus" MouseLeave="checkEmptyTextBox" Style="{StaticResource inputPasswordBox_style}" />
                             <TextBlock
                                 MouseEnter="ClearTextBox"
                                 Style="{StaticResource hintText_style}"
                                 Text="Введите Пароль" />
                         </Grid>
-                        
+
                         <!--  Кнопка авторизации  -->
                         <Button
                             Click="AuthorizationUser"
@@ -107,9 +107,7 @@
                         </StackPanel>
                     </Border>
                 </Grid>
-
             </Border>
-
         </Grid>
     </Grid>
 </Window>

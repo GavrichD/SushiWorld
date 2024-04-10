@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -81,12 +82,44 @@ namespace SushiWorld
             mainWindow.Show();
         }
 
-        // Зарегистрировать пользоавтеля
+        // АВТОРИЗАЦИЯ
+        // Авторизовать пользоавтеля
         public void AuthorizationUser(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("do authorization");
             Settings.Default["Basket"] = "";
             Settings.Default.Save();
+
+            bool CheckAuorization = true;
+
+            // Проверка на ввод 11 цифр
+            if (!Regex.IsMatch(PhoneNumberAutorization.Text, @"^\d{11}$"))
+            {
+                MessageBox.Show("Пожалуйста введите 11-значный номер телефона");
+                CheckAuorization = false;
+                Console.WriteLine(3);
+            }
+
+            if (UserPasswordAutorization.Password.Length == 0)
+            {
+                MessageBox.Show("Please enter a password.");
+                CheckAuorization = false;
+                Console.WriteLine(4);
+            }
+
+            // Проверяем правильность ввода
+            bool CheckUserDataInDataBase = new DataBaseConnection().CheckUserDataInDataBase(
+                PhoneNumberAutorization.Text.ToString(), UserPasswordAutorization.Password.ToString());
+
+            if (CheckAuorization && CheckUserDataInDataBase)
+            {
+                Console.WriteLine(6);
+                GoMainWindow(null, null); // Переход на окно авторизации
+            }
+            else
+            {
+                MessageBox.Show("Вы ввели неправильный логин или пароль");
+            }
         }
 
 
@@ -112,16 +145,30 @@ namespace SushiWorld
         // Проверка что поле не пустое
         public void checkEmptyTextBox(object sender, RoutedEventArgs e)
         {
-
-            enterTextBox = sender as TextBox;
-            if (clearTextBlock == null)
-                return;
-
-            if (enterTextBox.Text.Length == 0)
+            if (sender is PasswordBox checkPasswordBox)
             {
-                clearTextBlock.Visibility = Visibility.Visible;
+                if (checkPasswordBox.Password.Length == 0)
+                {
+                    clearTextBlock.Visibility = Visibility.Visible;
+                }
             }
 
+            if (sender is TextBox checkTextBox)
+            {
+                if (checkTextBox.Text.Length == 0)
+                {
+                    clearTextBlock.Visibility = Visibility.Visible;
+                }
+            }
+        }
+
+        // Добавляем обработчик события LostFocus к TextBox
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (enterTextBox != null)
+            {
+                checkEmptyTextBox(sender, e);
+            }
         }
 
         // Переход к окну регистрации
@@ -139,7 +186,49 @@ namespace SushiWorld
             registrationWindow.Show();
         }
 
+        // Переход к окну главному 
+        public void GoMainWindow(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("open main window");
+            MainWindow mainWindow = new MainWindow()
+            {
+                WindowStartupLocation = WindowStartupLocation.Manual,
+                Left = Left,
+                Top = Top
+            };
 
-        
+            this.Visibility = Visibility.Collapsed;
+            mainWindow.Show();
+        }
+
+
+        /*//АВТОРИЗАЦИЯ ПОЛЬЗОВАТЕЛЯ
+        public void AutorizationProcess(object sender, RoutedEventArgs e)
+        {
+            bool CheckAuorization = true;
+
+            // Проверка на ввод 11 цифр
+            if (!Regex.IsMatch(PhoneNumberAutorization.Text, @"^\d{11}$"))
+            {
+                MessageBox.Show("Please enter a valid phone number with 11 digits.");
+                CheckAuorization = false;
+                Console.WriteLine(3);
+            }
+
+            if (UserPasswordAutorization.Password.Length == 0)
+            {
+                MessageBox.Show("Please enter a password.");
+                CheckAuorization = false;
+                Console.WriteLine(4);
+            }
+
+
+            // Переход на окно Главное
+            if (CheckAuorization)
+            {
+                Console.WriteLine("Успешная авторизация");
+                GoMainWindow(null, null); // Переход на окно авторизации
+            }
+        }*/
     }
 }

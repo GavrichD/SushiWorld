@@ -142,3 +142,33 @@ C:\Users\student-523\Desktop\Gavr\SushiWorld\SushiWorld\obj\Debug\SushiWorld.csp
 C:\Users\student-523\Desktop\Gavr\SushiWorld\SushiWorld\obj\Debug\SushiWorld.csproj.CoreCompileInputs.cache
 C:\Users\student-523\Desktop\Gavr\SushiWorld\SushiWorld\obj\Debug\SushiWorld.exe
 C:\Users\student-523\Desktop\Gavr\SushiWorld\SushiWorld\obj\Debug\SushiWorld.pdb
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\bin\Debug\SushiWorld.exe.config
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\bin\Debug\SushiWorld.exe
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\bin\Debug\SushiWorld.pdb
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\SushiWorld.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\BasketWindow.g.cs
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\FoodCardWindow.g.cs
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\InformationWindow.g.cs
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\MainWindow.g.cs
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\OrderWindow.g.cs
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\RegistrationWindow.g.cs
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\SaleWindow.g.cs
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\UserAccount.g.cs
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\App.g.cs
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\SushiWorld_MarkupCompile.cache
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\SushiWorld_MarkupCompile.lref
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\App.baml
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\BasketWindow.baml
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\FoodCardWindow.baml
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\InformationWindow.baml
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\MainWindow.baml
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\OrderWindow.baml
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\RegistrationWindow.baml
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\SaleWindow.baml
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\UserAccount.baml
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\SushiWorld.g.resources
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\SushiWorld.Properties.Resources.resources
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\SushiWorld.csproj.GenerateResource.cache
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\SushiWorld.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\SushiWorld.exe
+C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\SushiWorld.pdb
