@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\SushiWorld\\SushiWorld\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{722CD42A-5F40-4F1C-BB9B-CF142B3F9F79}|SushiWorld\\SushiWorld.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\sushiworld\\sushiworld\\sushiworld\\datrabaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{722CD42A-5F40-4F1C-BB9B-CF142B3F9F79}|SushiWorld\\SushiWorld.csproj|solutionrelative:sushiworld\\datrabaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{722CD42A-5F40-4F1C-BB9B-CF142B3F9F79}|SushiWorld\\SushiWorld.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\sushiworld\\sushiworld\\sushiworld\\informationwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{722CD42A-5F40-4F1C-BB9B-CF142B3F9F79}|SushiWorld\\SushiWorld.csproj|solutionrelative:sushiworld\\informationwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{722CD42A-5F40-4F1C-BB9B-CF142B3F9F79}|SushiWorld\\SushiWorld.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\sushiworld\\sushiworld\\sushiworld\\informationwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{722CD42A-5F40-4F1C-BB9B-CF142B3F9F79}|SushiWorld\\SushiWorld.csproj|solutionrelative:sushiworld\\informationwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{722CD42A-5F40-4F1C-BB9B-CF142B3F9F79}|SushiWorld\\SushiWorld.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\sushiworld\\sushiworld\\sushiworld\\useraccount.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{722CD42A-5F40-4F1C-BB9B-CF142B3F9F79}|SushiWorld\\SushiWorld.csproj|solutionrelative:sushiworld\\useraccount.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{722CD42A-5F40-4F1C-BB9B-CF142B3F9F79}|SushiWorld\\SushiWorld.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\sushiworld\\sushiworld\\sushiworld\\datrabaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{722CD42A-5F40-4F1C-BB9B-CF142B3F9F79}|SushiWorld\\SushiWorld.csproj|solutionrelative:sushiworld\\datrabaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{722CD42A-5F40-4F1C-BB9B-CF142B3F9F79}|SushiWorld\\SushiWorld.csproj|C:\\Users\\User\\Desktop\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\SushiWorld\\SushiWorld\\sushiworld\\registrationwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -61,12 +69,37 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 164,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 262,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "InformationWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\SushiWorld\\SushiWorld\\SushiWorld\\InformationWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SushiWorld\\InformationWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\SushiWorld\\SushiWorld\\SushiWorld\\InformationWindow.xaml.cs",
+              "RelativeToolTip": "SushiWorld\\InformationWindow.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T18:53:56.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "InformationWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\SushiWorld\\SushiWorld\\SushiWorld\\InformationWindow.xaml",
+              "RelativeDocumentMoniker": "SushiWorld\\InformationWindow.xaml",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\SushiWorld\\SushiWorld\\SushiWorld\\InformationWindow.xaml",
+              "RelativeToolTip": "SushiWorld\\InformationWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-10T18:53:54.715Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "UserAccount.xaml.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\SushiWorld\\SushiWorld\\SushiWorld\\UserAccount.xaml.cs",
               "RelativeDocumentMoniker": "SushiWorld\\UserAccount.xaml.cs",
@@ -79,7 +112,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "RegistrationWindow.xaml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\SushiWorld\\SushiWorld\\SushiWorld\\RegistrationWindow.xaml",
               "RelativeDocumentMoniker": "SushiWorld\\RegistrationWindow.xaml",
@@ -91,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "FoodCardWindow.xaml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\SushiWorld\\SushiWorld\\SushiWorld\\FoodCardWindow.xaml",
               "RelativeDocumentMoniker": "SushiWorld\\FoodCardWindow.xaml",
@@ -102,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\SushiWorld\\SushiWorld\\SushiWorld\\MainWindow.xaml",
               "RelativeDocumentMoniker": "SushiWorld\\MainWindow.xaml",
@@ -113,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "OrderWindow.xaml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\SushiWorld\\SushiWorld\\SushiWorld\\OrderWindow.xaml",
               "RelativeDocumentMoniker": "SushiWorld\\OrderWindow.xaml",
@@ -124,7 +157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "SaleWindow.xaml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\SushiWorld\\SushiWorld\\SushiWorld\\SaleWindow.xaml",
               "RelativeDocumentMoniker": "SushiWorld\\SaleWindow.xaml",
@@ -135,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "BasketWindow.xaml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\SushiWorld\\SushiWorld\\SushiWorld\\BasketWindow.xaml",
               "RelativeDocumentMoniker": "SushiWorld\\BasketWindow.xaml",
@@ -147,12 +180,12 @@
           ]
         },
         {
-          "DockedWidth": 384,
+          "DockedWidth": 286,
           "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "UserAccount.xaml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\SushiWorld\\SushiWorld\\SushiWorld\\UserAccount.xaml",
               "RelativeDocumentMoniker": "SushiWorld\\UserAccount.xaml",
@@ -163,7 +196,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "RegistrationWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\SushiWorld\\SushiWorld\\SushiWorld\\RegistrationWindow.xaml.cs",
               "RelativeDocumentMoniker": "SushiWorld\\RegistrationWindow.xaml.cs",
@@ -175,7 +208,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "FoodCardWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\SushiWorld\\SushiWorld\\SushiWorld\\FoodCardWindow.xaml.cs",
               "RelativeDocumentMoniker": "SushiWorld\\FoodCardWindow.xaml.cs",
@@ -187,20 +220,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "DatraBaseConnection.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\SushiWorld\\SushiWorld\\SushiWorld\\DatraBaseConnection.cs",
               "RelativeDocumentMoniker": "SushiWorld\\DatraBaseConnection.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\SushiWorld\\SushiWorld\\SushiWorld\\DatraBaseConnection.cs",
               "RelativeToolTip": "SushiWorld\\DatraBaseConnection.cs",
-              "ViewState": "AQIAAIEAAAAAAAAAAAAtwJYAAAAAAAAA",
+              "ViewState": "AQIAAJ8AAAAAAAAAAAD4v5YAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-19T18:39:23.968Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\SushiWorld\\SushiWorld\\SushiWorld\\App.xaml",
               "RelativeDocumentMoniker": "SushiWorld\\App.xaml",
@@ -212,7 +245,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "BasketWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u041A\u0443\u0440\u0441\u043E\u0432\u0430\u044F c#\\SushiWorld\\SushiWorld\\SushiWorld\\BasketWindow.xaml.cs",
               "RelativeDocumentMoniker": "SushiWorld\\BasketWindow.xaml.cs",

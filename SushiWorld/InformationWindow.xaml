@@ -145,7 +145,7 @@
 
                         <Border CornerRadius="20" Height="300" Width="400">
                             <Border.Background>
-                                <ImageBrush Stretch="Fill"  ImageSource="Images/Beluga_rest.jpg"/>
+                                <ImageBrush Stretch="Fill"  ImageSource="Images/beluga_2.png"/>
                             </Border.Background>
                         </Border>
 
