@@ -49,13 +49,16 @@
 
             </Border>
             <!--  Блок с оплатой  -->
-            <Border x:Name="PaymentBlock" Style="{StaticResource bottomMenuPanel_style}" >
+            <Border x:Name="PaymentBlock" Style="{StaticResource bottomMenuPanel_style}">
                 <Grid>
-                    <Border Width="300" Style="{StaticResource PaymentButton_style}" Height="100" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" CornerRadius="15">
+                    <Border x:Name="goPayButton" Width="300" Style="{StaticResource PaymentButton_style}" Height="90" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" 
+                            MouseEnter="DoFatPay"
+                            MouseLeave="DoNormalPay"
+                            CornerRadius="20">
                         <Grid>
+                            <Image Source="Images/Оплата.png" Style="{StaticResource PaymentImage_style}" HorizontalAlignment="Right" Margin="0,0,10,0" Height="85"/>
                             <TextBlock Text="Оплатить" Style="{StaticResource normalText_style}" Margin="0,20,100,0"/>
-                            <Image Source="Images/Оплата.png" Style="{StaticResource backImage_style}" HorizontalAlignment="Right" Margin="0,0,10,0" Height="90"/>
-                            <Button x:Name="PaymentButton" Opacity="0" Click="PaymentClick"/>
+                            <Button x:Name="PaymentButton" Opacity="0" Click="GoPaymentWindow"/>
                         </Grid>
                     </Border>
                 </Grid>

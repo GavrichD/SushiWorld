@@ -51,6 +51,24 @@ namespace SushiWorld
 
         }
 
+        // Кнопка оплаты
+        // Расширение кнолпки оплаты
+        public void DoFatPay(object sender, RoutedEventArgs e)
+        {
+            Border bigBorder = sender as Border;
+            bigBorder.Width = 330;
+            bigBorder.Height = 105;
+            bigBorder.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#936AD2");
+        }
+        // Уменьшение кнопки оплатв
+        public void DoNormalPay(object sender, RoutedEventArgs e)
+        {
+            Border smallBorder = sender as Border;
+            smallBorder.Width = 300;
+            smallBorder.Height = 90;
+            smallBorder.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#AB7AF5");
+        }
+
         // Уменьшение картинки при отведении мыши с кнопки
         public void PaymentClick(object sender, RoutedEventArgs e)
         {
@@ -76,7 +94,7 @@ namespace SushiWorld
         {
             scrollFoodCard.Children.Clear();
 
-            
+
 
             Console.WriteLine(Settings.Default["Basket"].ToString().Split(';').Length);
             Console.WriteLine(Settings.Default["Basket"].ToString());
@@ -87,7 +105,7 @@ namespace SushiWorld
                 ShowerItems.Child = generateEmptyBasketPicture();
                 return;
             }
-            
+
             foreach (var food in Settings.Default["Basket"].ToString().Split(';'))
             {
                 if (food.Length > 0)
@@ -148,7 +166,7 @@ namespace SushiWorld
 
                     scrollFoodCard.Children.Add(cardBorder);
                 }
-                
+
 
 
             }
@@ -283,8 +301,8 @@ namespace SushiWorld
             {
                 Height = 50,
                 Width = 50,
-                
-                
+
+
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center,
 
@@ -299,7 +317,7 @@ namespace SushiWorld
                 Background = new SolidColorBrush(Colors.White),
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center,
-                
+
 
             };
 
@@ -415,7 +433,7 @@ namespace SushiWorld
         // Генерация картинки пустой корзины
         private Image generateEmptyBasketPicture()
         {
-            
+
             Image foodCardPicture = new Image()
             {
                 Height = 300,
@@ -429,6 +447,21 @@ namespace SushiWorld
 
             };
             return foodCardPicture;
+        }
+
+        // Переход к окну Оплаты
+        public void GoPaymentWindow(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("open PaymentWindow");
+            PaymentWindow PaymentWindow = new PaymentWindow()
+            {
+                WindowStartupLocation = WindowStartupLocation.Manual,
+                Left = Left,
+                Top = Top
+            };
+
+            this.Visibility = Visibility.Collapsed;
+            PaymentWindow.Show();
         }
     }
 }

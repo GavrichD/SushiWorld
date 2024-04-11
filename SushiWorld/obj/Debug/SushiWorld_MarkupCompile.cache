@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\obj\Debug\
+C:\Users\student-523\Desktop\Gavr\SushiWorld\SushiWorld\SushiWorld\obj\Debug\
 SushiWorld
 none
 false
 DEBUG;TRACE
-C:\Users\User\Desktop\Курсовая c#\SushiWorld\SushiWorld\SushiWorld\App.xaml
-81184691599
+C:\Users\student-523\Desktop\Gavr\SushiWorld\SushiWorld\SushiWorld\App.xaml
+92104389339
 
-131826208358
+14-554943702
 13-1310406943
-BasketWindow.xaml;FoodCardWindow.xaml;InformationWindow.xaml;MainWindow.xaml;OrderWindow.xaml;RegistrationWindow.xaml;SaleWindow.xaml;UserAccount.xaml;
+BasketWindow.xaml;FoodCardWindow.xaml;InformationWindow.xaml;MainWindow.xaml;OrderWindow.xaml;PaymentWindow.xaml;RegistrationWindow.xaml;SaleWindow.xaml;UserAccount.xaml;
 
 False
 
