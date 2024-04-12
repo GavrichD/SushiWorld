@@ -70,7 +70,7 @@ namespace SushiWorld
             bigBorder.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#936AD2");
 
         }
-        // Уменьшение картинки при отведении мыши с кнопки
+        // Уменьшение картинки при отведении мыши с кнопки   ew
         public void DoNormal(object sender, RoutedEventArgs e)
         {
             Border smallBorder = sender as Border;
