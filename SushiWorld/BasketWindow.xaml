@@ -43,10 +43,8 @@
                     <Border x:Name="ShowerItems"/>
                     <ScrollViewer>
                         <StackPanel x:Name="scrollFoodCard" />
-
                     </ScrollViewer>
                 </Grid>
-
             </Border>
             <!--  Блок с оплатой  -->
             <Border x:Name="PaymentBlock" Style="{StaticResource bottomMenuPanel_style}">

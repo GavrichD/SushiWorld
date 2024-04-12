@@ -24,8 +24,9 @@ namespace SushiWorld
         public MainWindow()
         {
             InitializeComponent();
-
         }
+
+        
 
         // Уыеличение картинки при наведении на кнопку
         public void DoBig(object sender, RoutedEventArgs e)

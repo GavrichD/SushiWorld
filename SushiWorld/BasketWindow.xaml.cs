@@ -75,7 +75,7 @@ namespace SushiWorld
             Console.WriteLine(1);
         }
 
-        // Переход к окну регистрации
+        // Переход к главному окну
         public void GoBack(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("go back");
@@ -90,19 +90,26 @@ namespace SushiWorld
             this.Visibility = Visibility.Collapsed;
             mainWindow.Show();
         }
+
+        private bool canUserProceedToPayment;
+
         public void generateFoodCard()
         {
             scrollFoodCard.Children.Clear();
 
 
-
+            //Если корзина пуста
             Console.WriteLine(Settings.Default["Basket"].ToString().Split(';').Length);
             Console.WriteLine(Settings.Default["Basket"].ToString());
             if (Settings.Default["Basket"].ToString().Length == 0)
             {
-                MessageBox.Show("Корзина пуста", "Тех-поддержка", MessageBoxButton.OK);
 
                 ShowerItems.Child = generateEmptyBasketPicture();
+                canUserProceedToPayment = false;
+
+                //Излишнее упоминание ято корзина пуста
+                //MessageBox.Show("Корзина пуста", "Тех-поддержка", MessageBoxButton.OK);
+
                 return;
             }
 
@@ -445,6 +452,7 @@ namespace SushiWorld
                 Margin = new Thickness(0, 0, 0, 0),
                 VerticalAlignment = VerticalAlignment.Center,
 
+
             };
             return foodCardPicture;
         }
@@ -452,16 +460,34 @@ namespace SushiWorld
         // Переход к окну Оплаты
         public void GoPaymentWindow(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("open PaymentWindow");
-            PaymentWindow PaymentWindow = new PaymentWindow()
+            if (!String.IsNullOrEmpty(Settings.Default["Basket"].ToString()))
             {
-                WindowStartupLocation = WindowStartupLocation.Manual,
-                Left = Left,
-                Top = Top
-            };
 
-            this.Visibility = Visibility.Collapsed;
-            PaymentWindow.Show();
+                InitializeComponent();
+                if (UserAccount.UserIsAutorizated)
+                {
+                    Console.WriteLine("open PaymentWindow");
+                    PaymentWindow PaymentWindow = new PaymentWindow()
+                    {
+                        WindowStartupLocation = WindowStartupLocation.Manual,
+                        Left = Left,
+                        Top = Top
+                    };
+                    this.Visibility = Visibility.Collapsed;
+                    PaymentWindow.Show();
+                }
+                else
+                {
+                    Console.WriteLine("Корзина пуста, оплата невозможна");
+                    MessageBox.Show("Перед оплатой необходимо авторизоваться");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Корзина пуста, оплата невозможна");
+                MessageBox.Show("Перед оплатой поместите товары в корзину");
+            }
         }
     }
 }
+//UserIsAutorizated

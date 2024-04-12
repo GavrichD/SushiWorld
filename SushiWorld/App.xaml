@@ -268,8 +268,17 @@
             <Setter Property="VerticalAlignment" Value="Top" />
         </Style>
 
-        
-        
+        <!--  Стиль для показа блюд в меню оплаты {Border }  -->
+        <Style x:Key="MenuShowerInPaymentWindow_style" TargetType="Border">
+            <Setter Property="Width" Value="1000" />
+            <Setter Property="Height" Value="625" />
+            <Setter Property="Background" Value="#F5F3D0" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+        </Style>
+
+
+
         <!--  Стили для страницы акций  -->
         <!--  Стиль для показа акций {Grid }  -->
         <Style x:Key="Sale_style" TargetType="Grid">
@@ -302,7 +311,6 @@
         <Style x:Key="info_style" TargetType="Grid">
             <Setter Property="Width" Value="1000" />
             <Setter Property="Height" Value="710" />
-
             <Setter Property="HorizontalAlignment" Value="Right" />
             <Setter Property="VerticalAlignment" Value="Top" />
         </Style>
@@ -438,8 +446,6 @@
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="Margin" Value="0,0,50,0" />
             <Setter Property="Background" Value="#C88251" />
-
         </Style>
-
     </Application.Resources>
 </Application>

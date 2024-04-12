@@ -5,8 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SushiWorld"
         mc:Ignorable="d"
-        Title="PaymentWindow" Height="450" Width="800">
+        Title="Оплата" Height="900" Width="1100">
     <Grid>
-        
+
+        <!--  Шапка приложения  -->
+        <Grid x:Name="Head" Style="{StaticResource HeadGrid_style}">
+            <TextBlock Style="{StaticResource TitleText_style}" Text="Sushi World" />
+            <Image Source="Images/СушиЛоготип.png" Style="{StaticResource LogoImage_style}" />
+            <Image
+             Margin="345,0,0,50"
+             Source="Images/Телефон.png"
+             Style="{StaticResource SmallPicture_style}" />
+            <Image
+             Margin="345,60,0,0"
+             Source="Images/Почта.png"
+             Style="{StaticResource SmallPicture_style}" />
+            <TextBox
+             Margin="0,0,0,50"
+             Style="{StaticResource orgInformationTextStyle}"
+             Text="8(900)-554-1221" />
+            <TextBox
+             Margin="0,50,0,0"
+             Style="{StaticResource orgInformationTextStyle}"
+             Text="SushiW@mail.ru" />
+        </Grid>
+
+        <!--  Тело приложения  -->
+        <Grid x:Name="Body" Style="{StaticResource Body_style}">
+            <!--  Меню Визуализация Оплаты -->
+                
+            <!--  Кнопка назад  -->
+            <Border
+             x:Name="goBackButton"
+             MouseDown="GoBack"
+             MouseEnter="DoFat"
+             MouseLeave="DoNormal"
+             Style="{StaticResource GoBackButton_style}">
+                <Grid>
+                    <Image Source="Images/Назад.png" Style="{StaticResource backImage_style}" />
+                    <TextBlock
+                     x:Name="Back"
+                     Margin="0,150,0,0"
+                     VerticalAlignment="Center"
+                     FontSize="36"
+                     Opacity="0"
+                     Style="{StaticResource normalText_style}"
+                     Text="Назад" />
+                </Grid>
+            </Border>
+        </Grid>
     </Grid>
 </Window>

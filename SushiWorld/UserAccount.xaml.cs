@@ -22,6 +22,7 @@ namespace SushiWorld
     /// </summary>
     public partial class UserAccount : Window
     {
+        public static bool UserIsAutorizated = false;
         public TextBlock clearTextBlock = null;
         public TextBox enterTextBox = null;
         public UserAccount()
@@ -87,8 +88,11 @@ namespace SushiWorld
         public void AuthorizationUser(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("do authorization");
-            Settings.Default["Basket"] = "";
-            Settings.Default.Save();
+
+            //Старая очистка корзины
+            /*            Settings.Default["Basket"] = "";
+                        Settings.Default.Save();
+            */
 
             bool CheckAuorization = true;
 
@@ -115,6 +119,7 @@ namespace SushiWorld
             {
                 Console.WriteLine(6);
                 GoMainWindow(null, null); // Переход на окно авторизации
+                UserIsAutorizated = true;
             }
             else
             {
